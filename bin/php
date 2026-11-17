@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+root="$(cd "$(dirname "$0")/.." && pwd)"
+
+if [[ -d "$root/.php/conf.d" ]] && ! php -m | grep -qx 'pdo_sqlite'; then
+    export PHP_INI_SCAN_DIR=":${root}/.php/conf.d"
+fi
+
+exec php "$@"
