@@ -1,18 +1,23 @@
-# Graph Report - Planner  (2026-11-17)
+# Graph Report - Planner  (2026-11-19)
 
 ## Corpus Check
-- 84 files · ~12,709 words
+- 88 files · ~13,712 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 252 nodes · 210 edges · 72 communities (64 shown, 8 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
+- 264 nodes · 229 edges · 72 communities (64 shown, 8 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `67a92b8e`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - composer.json
 - scripts
-- User.php
+- User
 - devDependencies
 - require-dev
 - AppServiceProvider
@@ -33,11 +38,12 @@
 - layout.navigation
 - layout/navigation.blade.php
 - welcome.blade.php
+- SetUserLocale.php
 
 ## God Nodes (most connected - your core abstractions)
-1. `require-dev` - 11 edges
-2. `scripts` - 9 edges
-3. `User` - 7 edges
+1. `User` - 19 edges
+2. `require-dev` - 11 edges
+3. `scripts` - 9 edges
 4. `setup` - 7 edges
 5. `require` - 6 edges
 6. `LoginForm` - 5 edges
@@ -63,9 +69,9 @@ Nodes (27): autoload, autoload-dev, psr-4, psr-4, description, extra, laravel, k
 Cohesion: 0.08
 Nodes (26): scripts, dev, post-autoload-dump, post-create-project-cmd, post-root-package-install, post-update-cmd, pre-package-uninstall, setup (+18 more)
 
-### Community 2 - "User.php"
-Cohesion: 0.14
-Nodes (7): User, DatabaseSeeder, Illuminate\Database\Console\Seeds\WithoutModelEvents, Illuminate\Database\Eloquent\Factories\HasFactory, Illuminate\Database\Seeder, Illuminate\Foundation\Auth\User, Illuminate\Notifications\Notifiable
+### Community 2 - "User"
+Cohesion: 0.12
+Nodes (9): UpdateProfileInformation, User, DatabaseSeeder, Illuminate\Contracts\Auth\MustVerifyEmail, Illuminate\Database\Console\Seeds\WithoutModelEvents, Illuminate\Database\Eloquent\Factories\HasFactory, Illuminate\Database\Seeder, Illuminate\Foundation\Auth\User (+1 more)
 
 ### Community 3 - "devDependencies"
 Cohesion: 0.12
@@ -84,8 +90,8 @@ Cohesion: 0.20
 Nodes (9): @laravel/multiplex, optionalDependencies, @laravel/multiplex, private, $schema, scripts, build, dev (+1 more)
 
 ### Community 7 - "VerifyEmailController.php"
-Cohesion: 0.31
-Nodes (5): VerifyEmailController, Controller, Illuminate\Contracts\Auth\MustVerifyEmail, Illuminate\Foundation\Auth\EmailVerificationRequest, Illuminate\Http\RedirectResponse
+Cohesion: 0.36
+Nodes (4): VerifyEmailController, Controller, Illuminate\Foundation\Auth\EmailVerificationRequest, Illuminate\Http\RedirectResponse
 
 ### Community 8 - "Illuminate\View\Component"
 Cohesion: 0.43
@@ -115,6 +121,10 @@ Nodes (3): Agent Setup, Laravel Application, Prerequisites
 Cohesion: 0.50
 Nodes (3): profile.delete-user-form, profile.update-password-form, profile.update-profile-information-form
 
+### Community 27 - "SetUserLocale.php"
+Cohesion: 0.39
+Nodes (4): SetUserLocale, Closure, Illuminate\Http\Request, Symfony\Component\HttpFoundation\Response
+
 ## Knowledge Gaps
 - **83 isolated node(s):** `$schema`, `name`, `type`, `description`, `laravel` (+78 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -124,16 +134,16 @@ Nodes (3): profile.delete-user-form, profile.update-password-form, profile.updat
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `scripts` connect `scripts` to `composer.json`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+- **Why does `User` connect `User` to `SetUserLocale.php`, `UserFactory`?**
+  _High betweenness centrality (0.022) - this node is a cross-community bridge._
 - **Why does `require-dev` connect `require-dev` to `composer.json`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **Why does `config` connect `config` to `composer.json`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **What connects `$schema`, `name`, `type` to the rest of the system?**
   _83 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `composer.json` be split into smaller, more focused modules?**
   _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
-- **Should `User.php` be split into smaller, more focused modules?**
-  _Cohesion score 0.1437908496732026 - nodes in this community are weakly interconnected._
+- **Should `User` be split into smaller, more focused modules?**
+  _Cohesion score 0.12121212121212122 - nodes in this community are weakly interconnected._

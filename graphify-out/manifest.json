@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "app/Models/User.php": {
-    "mtime": 1794936081.2717535,
-    "ast_hash": "8a54f1e2bd21ce8e0bf3b04373c61f73",
+    "mtime": 1795043473.5067153,
+    "ast_hash": "006639f23bba460e5a71dda506c8387b",
     "semantic_hash": ""
   },
   "app/Providers/AppServiceProvider.php": {
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "bootstrap/app.php": {
-    "mtime": 1790776605.0,
-    "ast_hash": "d649649bd49673a6cc6b98c428f51e3a",
+    "mtime": 1795043479.577578,
+    "ast_hash": "9f90f15a43d2242ff5e397779a4f781b",
     "semantic_hash": ""
   },
   "bootstrap/providers.php": {
@@ -125,8 +125,8 @@
     "semantic_hash": ""
   },
   "database/factories/UserFactory.php": {
-    "mtime": 1790776605.0,
-    "ast_hash": "1c9f381f9c2bc3027971a3bfdbe99164",
+    "mtime": 1795043473.9233289,
+    "ast_hash": "6fd7163640b5e2b61258bb842008f77f",
     "semantic_hash": ""
   },
   "database/migrations/0001_01_01_000000_create_users_table.php": {
@@ -300,8 +300,8 @@
     "semantic_hash": ""
   },
   "resources/views/livewire/profile/update-profile-information-form.blade.php": {
-    "mtime": 1794917826.3467577,
-    "ast_hash": "324b182fd45051620180c60d5329d14d",
+    "mtime": 1795043491.2883174,
+    "ast_hash": "5d31da38b20614387531bc1bfcdfb256",
     "semantic_hash": ""
   },
   "resources/views/livewire/welcome/navigation.blade.php": {
@@ -375,8 +375,8 @@
     "semantic_hash": ""
   },
   "tests/Feature/ProfileTest.php": {
-    "mtime": 1794917879.0907097,
-    "ast_hash": "c7e1bdb573c6e4c3e180acafb0b39d3d",
+    "mtime": 1795043512.411306,
+    "ast_hash": "1217d91323669710898a75be297894ca",
     "semantic_hash": ""
   },
   "tests/Pest.php": {
@@ -422,6 +422,26 @@
   "public/robots.txt": {
     "mtime": 1790776605.0,
     "ast_hash": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "semantic_hash": ""
+  },
+  "app/Actions/Profile/UpdateProfileInformation.php": {
+    "mtime": 1795043500.587312,
+    "ast_hash": "c5ed4412d6c829307043bbe59c2b6f24",
+    "semantic_hash": ""
+  },
+  "app/Http/Middleware/SetUserLocale.php": {
+    "mtime": 1795043460.542339,
+    "ast_hash": "ce63d4b0635b11c0226d0f184554468f",
+    "semantic_hash": ""
+  },
+  "database/migrations/2026_11_19_001000_add_academic_profile_to_users_table.php": {
+    "mtime": 1795043457.1129115,
+    "ast_hash": "a96598288fdb1cbafd84821904e3ab99",
+    "semantic_hash": ""
+  },
+  "lang/fr.json": {
+    "mtime": 1795043468.182622,
+    "ast_hash": "06dddc75ba195b3c7549c28666cbdceb",
     "semantic_hash": ""
   }
 }
