@@ -2,11 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome');
+Route::get('/', function () {
+    return auth()->check()
+        ? redirect()->route('dashboard')
+        : redirect()->route('login');
+});
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::view('dashboard', 'planning')->name('dashboard');
+    Route::view('planning', 'planning')->name('planning.board');
+    Route::view('categories', 'categories')->name('categories.index');
+});
 
 Route::view('profile', 'profile')
     ->middleware(['auth'])

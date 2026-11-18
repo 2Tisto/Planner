@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Auth;
 
+use App\Models\User;
 use Livewire\Volt\Volt;
 
 test('registration screen can be rendered', function () {
@@ -24,5 +25,12 @@ test('new users can register', function () {
     $component->assertRedirect(route('dashboard', absolute: false));
 
     $this->assertAuthenticated();
+
+    $user = User::query()->where('email', 'test@example.com')->first();
+
+    expect($user)->not->toBeNull()
+        ->and($user->categories)->toHaveCount(12)
+        ->and($user->categories->pluck('name')->all())->toContain('Cours', 'Sommeil');
+
     $this->get(route('dashboard'))->assertRedirect(route('verification.notice', absolute: false));
 });

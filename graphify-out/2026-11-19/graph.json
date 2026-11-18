@@ -4,6 +4,39 @@
   "graph": {},
   "nodes": [
     {
+      "label": "UpdateProfileInformation.php",
+      "file_type": "code",
+      "source_file": "app/Actions/Profile/UpdateProfileInformation.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_actions_profile_updateprofileinformation",
+      "community": 2,
+      "community_name": "User",
+      "norm_label": "updateprofileinformation.php"
+    },
+    {
+      "label": "UpdateProfileInformation",
+      "file_type": "code",
+      "source_file": "app/Actions/Profile/UpdateProfileInformation.php",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "app_actions_profile_updateprofileinformation_updateprofileinformation",
+      "community": 2,
+      "community_name": "User",
+      "norm_label": "updateprofileinformation"
+    },
+    {
+      "label": ".__invoke()",
+      "file_type": "code",
+      "source_file": "app/Actions/Profile/UpdateProfileInformation.php",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "app_actions_profile_updateprofileinformation_updateprofileinformation_invoke",
+      "community": 2,
+      "community_name": "User",
+      "norm_label": ".__invoke()"
+    },
+    {
       "label": "VerifyEmailController.php",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Auth/VerifyEmailController.php",
@@ -57,6 +90,50 @@
       "community": 7,
       "community_name": "VerifyEmailController.php",
       "norm_label": "controller"
+    },
+    {
+      "label": "SetUserLocale.php",
+      "file_type": "code",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_http_middleware_setuserlocale",
+      "community": 27,
+      "community_name": "SetUserLocale.php",
+      "norm_label": "setuserlocale.php"
+    },
+    {
+      "label": "SetUserLocale",
+      "file_type": "code",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "app_http_middleware_setuserlocale_setuserlocale",
+      "community": 27,
+      "community_name": "SetUserLocale.php",
+      "norm_label": "setuserlocale"
+    },
+    {
+      "label": ".handle()",
+      "file_type": "code",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "app_http_middleware_setuserlocale_setuserlocale_handle",
+      "community": 27,
+      "community_name": "SetUserLocale.php",
+      "norm_label": ".handle()"
+    },
+    {
+      "label": "Closure",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "closure",
+      "community": 27,
+      "community_name": "SetUserLocale.php",
+      "norm_label": "closure"
     },
     {
       "label": "Logout.php",
@@ -154,7 +231,7 @@
       "_origin": "ast",
       "id": "app_models_user",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "user.php"
     },
     {
@@ -165,7 +242,7 @@
       "_origin": "ast",
       "id": "app_models_user_user",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "user"
     },
     {
@@ -176,7 +253,7 @@
       "_origin": "ast",
       "id": "app_models_user_user_casts",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": ".casts()"
     },
     {
@@ -382,7 +459,7 @@
       "_origin": "ast",
       "id": "bootstrap_app",
       "community": 27,
-      "community_name": "bootstrap/app.php",
+      "community_name": "SetUserLocale.php",
       "norm_label": "bootstrap/app.php"
     },
     {
@@ -1207,7 +1284,7 @@
       "_origin": "ast",
       "id": "config_auth",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "config/auth.php"
     },
     {
@@ -1346,7 +1423,7 @@
       "label": ".unverified()",
       "file_type": "code",
       "source_file": "database/factories/UserFactory.php",
-      "source_location": "L39",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "database_factories_userfactory_userfactory_unverified",
       "community": 12,
@@ -1464,6 +1541,39 @@
       "norm_label": "down()"
     },
     {
+      "label": "2026_11_19_001000_add_academic_profile_to_users_table.php",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_11_19_001000_add_academic_profile_to_users_table.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "database_migrations_2026_11_19_001000_add_academic_profile_to_users_table",
+      "community": 38,
+      "community_name": "2026_11_19_001000_add_academic_profile_to_users_table.php",
+      "norm_label": "2026_11_19_001000_add_academic_profile_to_users_table.php"
+    },
+    {
+      "label": "up()",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_11_19_001000_add_academic_profile_to_users_table.php",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "database_migrations_2026_11_19_001000_add_academic_profile_to_users_table_up",
+      "community": 38,
+      "community_name": "2026_11_19_001000_add_academic_profile_to_users_table.php",
+      "norm_label": "up()"
+    },
+    {
+      "label": "down()",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_11_19_001000_add_academic_profile_to_users_table.php",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "database_migrations_2026_11_19_001000_add_academic_profile_to_users_table_down",
+      "community": 38,
+      "community_name": "2026_11_19_001000_add_academic_profile_to_users_table.php",
+      "norm_label": "down()"
+    },
+    {
       "label": "DatabaseSeeder.php",
       "file_type": "code",
       "source_file": "database/seeders/DatabaseSeeder.php",
@@ -1471,7 +1581,7 @@
       "_origin": "ast",
       "id": "database_seeders_databaseseeder",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "databaseseeder.php"
     },
     {
@@ -1482,7 +1592,7 @@
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "databaseseeder"
     },
     {
@@ -1493,7 +1603,7 @@
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder_run",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": ".run()"
     },
     {
@@ -1811,8 +1921,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "public_index",
-      "community": 38,
-      "community_name": "index.php",
+      "community": 27,
+      "community_name": "SetUserLocale.php",
       "norm_label": "index.php"
     },
     {
@@ -2296,7 +2406,7 @@
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "authenticationtest.php"
     },
     {
@@ -2307,7 +2417,7 @@
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "emailverificationtest.php"
     },
     {
@@ -2318,7 +2428,7 @@
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "passwordconfirmationtest.php"
     },
     {
@@ -2329,7 +2439,7 @@
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "passwordresettest.php"
     },
     {
@@ -2340,7 +2450,7 @@
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "passwordupdatetest.php"
     },
     {
@@ -2373,7 +2483,7 @@
       "_origin": "ast",
       "id": "tests_feature_profiletest",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "profiletest.php"
     },
     {
@@ -2636,8 +2746,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "illuminate_contracts_auth_mustverifyemail",
-      "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community": 2,
+      "community_name": "User",
       "norm_label": "illuminate\\contracts\\auth\\mustverifyemail"
     },
     {
@@ -2663,6 +2773,28 @@
       "norm_label": "illuminate\\http\\redirectresponse"
     },
     {
+      "label": "Illuminate\\Http\\Request",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "illuminate_http_request",
+      "community": 27,
+      "community_name": "SetUserLocale.php",
+      "norm_label": "illuminate\\http\\request"
+    },
+    {
+      "label": "Symfony\\Component\\HttpFoundation\\Response",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "symfony_component_httpfoundation_response",
+      "community": 27,
+      "community_name": "SetUserLocale.php",
+      "norm_label": "symfony\\component\\httpfoundation\\response"
+    },
+    {
       "label": "Livewire\\Form",
       "file_type": "code",
       "source_file": "",
@@ -2681,7 +2813,7 @@
       "_origin": "ast",
       "id": "illuminate_database_eloquent_factories_hasfactory",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "illuminate\\database\\eloquent\\factories\\hasfactory"
     },
     {
@@ -2692,7 +2824,7 @@
       "_origin": "ast",
       "id": "illuminate_notifications_notifiable",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "illuminate\\notifications\\notifiable"
     },
     {
@@ -2703,7 +2835,7 @@
       "_origin": "ast",
       "id": "illuminate_foundation_auth_user",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "illuminate\\foundation\\auth\\user"
     },
     {
@@ -2758,7 +2890,7 @@
       "_origin": "ast",
       "id": "illuminate_database_console_seeds_withoutmodelevents",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "illuminate\\database\\console\\seeds\\withoutmodelevents"
     },
     {
@@ -2769,7 +2901,7 @@
       "_origin": "ast",
       "id": "illuminate_database_seeder",
       "community": 2,
-      "community_name": "User.php",
+      "community_name": "User",
       "norm_label": "illuminate\\database\\seeder"
     },
     {
@@ -2785,6 +2917,52 @@
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Actions/Profile/UpdateProfileInformation.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_actions_profile_updateprofileinformation",
+      "target": "app_actions_profile_updateprofileinformation_updateprofileinformation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Actions/Profile/UpdateProfileInformation.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_actions_profile_updateprofileinformation",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Actions/Profile/UpdateProfileInformation.php",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_actions_profile_updateprofileinformation_updateprofileinformation",
+      "target": "app_actions_profile_updateprofileinformation_updateprofileinformation_invoke",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Actions/Profile/UpdateProfileInformation.php",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "app_actions_profile_updateprofileinformation_updateprofileinformation_invoke",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -2911,6 +3089,124 @@
       "_origin": "ast",
       "source": "app_http_controllers_controller",
       "target": "app_http_controllers_controller_controller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_http_middleware_setuserlocale",
+      "target": "app_http_middleware_setuserlocale_setuserlocale",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_http_middleware_setuserlocale",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_http_middleware_setuserlocale",
+      "target": "closure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_http_middleware_setuserlocale",
+      "target": "illuminate_http_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_http_middleware_setuserlocale",
+      "target": "symfony_component_httpfoundation_response",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bootstrap/app.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bootstrap_app",
+      "target": "app_http_middleware_setuserlocale",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_http_middleware_setuserlocale_setuserlocale",
+      "target": "app_http_middleware_setuserlocale_setuserlocale_handle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "app_http_middleware_setuserlocale_setuserlocale_handle",
+      "target": "closure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "_origin": "ast",
+      "source": "app_http_middleware_setuserlocale_setuserlocale_handle",
+      "target": "illuminate_http_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Middleware/SetUserLocale.php",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "return_type",
+      "_origin": "ast",
+      "source": "app_http_middleware_setuserlocale_setuserlocale_handle",
+      "target": "symfony_component_httpfoundation_response",
       "confidence_score": 1.0
     },
     {
@@ -3051,12 +3347,13 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
+      "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/User.php",
-      "source_location": "L15",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
+      "context": "import",
       "source": "app_models_user",
       "target": "app_models_user_user",
       "confidence_score": 1.0
@@ -3107,102 +3404,6 @@
       "_origin": "ast",
       "source": "app_models_user",
       "target": "database_factories_userfactory",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "config/auth.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "config_auth",
-      "target": "app_models_user",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/DatabaseSeeder.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "database_seeders_databaseseeder",
-      "target": "app_models_user",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/Feature/Auth/AuthenticationTest.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "tests_feature_auth_authenticationtest",
-      "target": "app_models_user",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/Feature/Auth/EmailVerificationTest.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "tests_feature_auth_emailverificationtest",
-      "target": "app_models_user",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/Feature/Auth/PasswordConfirmationTest.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "tests_feature_auth_passwordconfirmationtest",
-      "target": "app_models_user",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/Feature/Auth/PasswordResetTest.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "tests_feature_auth_passwordresettest",
-      "target": "app_models_user",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/Feature/Auth/PasswordUpdateTest.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "tests_feature_auth_passwordupdatetest",
-      "target": "app_models_user",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/Feature/ProfileTest.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "tests_feature_profiletest",
-      "target": "app_models_user",
       "confidence_score": 1.0
     },
     {
@@ -3261,16 +3462,124 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "config/auth.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "config_auth",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/factories/UserFactory.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "database_factories_userfactory",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/DatabaseSeeder.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "database_seeders_databaseseeder",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "database/seeders/DatabaseSeeder.php",
       "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
       "source": "database_seeders_databaseseeder_databaseseeder_run",
       "target": "app_models_user_user"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/Feature/Auth/AuthenticationTest.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_feature_auth_authenticationtest",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/Feature/Auth/EmailVerificationTest.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_feature_auth_emailverificationtest",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/Feature/Auth/PasswordConfirmationTest.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_feature_auth_passwordconfirmationtest",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/Feature/Auth/PasswordResetTest.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_feature_auth_passwordresettest",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/Feature/Auth/PasswordUpdateTest.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_feature_auth_passwordupdatetest",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/Feature/ProfileTest.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_feature_profiletest",
+      "target": "app_models_user_user",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3567,6 +3876,18 @@
       "_origin": "ast",
       "source": "bin_php",
       "target": "bin_php__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bootstrap/app.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "bootstrap_app",
+      "target": "illuminate_http_request",
       "confidence_score": 1.0
     },
     {
@@ -4419,7 +4740,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "database/factories/UserFactory.php",
-      "source_location": "L39",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
       "source": "database_factories_userfactory_userfactory",
@@ -4452,7 +4773,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "database/factories/UserFactory.php",
-      "source_location": "L39",
+      "source_location": "L45",
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
@@ -4524,6 +4845,28 @@
       "_origin": "ast",
       "source": "database_migrations_0001_01_01_000002_create_jobs_table",
       "target": "database_migrations_0001_01_01_000002_create_jobs_table_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database/migrations/2026_11_19_001000_add_academic_profile_to_users_table.php",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "database_migrations_2026_11_19_001000_add_academic_profile_to_users_table",
+      "target": "database_migrations_2026_11_19_001000_add_academic_profile_to_users_table_down",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database/migrations/2026_11_19_001000_add_academic_profile_to_users_table.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "database_migrations_2026_11_19_001000_add_academic_profile_to_users_table",
+      "target": "database_migrations_2026_11_19_001000_add_academic_profile_to_users_table_up",
       "confidence_score": 1.0
     },
     {
@@ -4890,6 +5233,18 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "public/index.php",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "public_index",
+      "target": "illuminate_http_request",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "uses_component",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -5166,5 +5521,6 @@
       "confidence_score": 1.0
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "67a92b8e1bfdaffedbf84a681d178f03fd9978ba"
 }

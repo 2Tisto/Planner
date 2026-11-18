@@ -1,7 +1,15 @@
 <?php
 
-it('returns a successful response', function () {
-    $response = $this->get('/');
+use App\Models\User;
 
-    $response->assertStatus(200);
+it('sends guests from the home page to login', function () {
+    $this->get('/')->assertRedirect(route('login'));
+});
+
+it('sends authenticated users from the home page to the dashboard', function () {
+    $user = User::factory()->create();
+
+    $this->actingAs($user)
+        ->get('/')
+        ->assertRedirect(route('dashboard'));
 });
