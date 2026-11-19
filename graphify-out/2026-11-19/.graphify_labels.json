@@ -10,7 +10,7 @@
   "8": "Illuminate\\View\\Component",
   "9": "README.md",
   "10": "Event",
-  "11": "LoginForm",
+  "11": "EventException",
   "12": "PlanningBoard",
   "13": "Pest.php",
   "14": "Laravel Application",
@@ -74,5 +74,7 @@
   "72": "2026_11_19_004000_create_events_table.php",
   "73": "category.category-manager",
   "74": "delete({{ $category->id }})",
-  "75": "planning.planning-board"
+  "75": "planning.planning-board",
+  "76": "PlaceEventOnDay.php",
+  "77": "2026_11_19_005000_create_event_exceptions_table.php"
 }

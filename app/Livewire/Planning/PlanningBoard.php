@@ -12,6 +12,7 @@ use App\Actions\Event\CreateEvent;
 use App\Actions\Event\DeleteEvent;
 use App\Actions\Event\DuplicateEvent;
 use App\Actions\Event\ExpandWeek;
+use App\Actions\Event\FindOverlaps;
 use App\Actions\Event\MoveEvent;
 use App\Actions\Event\OccurrenceMoment;
 use App\Actions\Event\OverrideOccurrence;
@@ -412,6 +413,7 @@ class PlanningBoard extends Component
         return view('livewire.planning.planning-board', [
             'board' => $this->board(),
             'categories' => $this->user()->categories()->orderBy('position')->orderBy('id')->get(),
+            'overlaps' => $this->composerOpen ? $this->overlaps() : [],
         ]);
     }
 
@@ -550,6 +552,34 @@ class PlanningBoard extends Component
         }
 
         return '#e5e7eb';
+    }
+
+    /**
+     * @return list<string>
+     */
+    private function overlaps(): array
+    {
+        $user = $this->user();
+        $timezone = $this->timezone($user);
+
+        try {
+            $start = Carbon::parse($this->selectedDate.' '.$this->starts, $timezone);
+            $end = Carbon::parse($this->selectedDate.' '.$this->ends, $timezone);
+        } catch (\Throwable) {
+            return [];
+        }
+
+        if ($end->lessThanOrEqualTo($start)) {
+            $end = $end->addDay();
+        }
+
+        return app(FindOverlaps::class)(
+            $user,
+            $start,
+            $end,
+            $this->editingId,
+            $this->editingOccurrence !== '' ? $this->editingOccurrence : null,
+        );
     }
 
     private function firstDate(?Event $event): string

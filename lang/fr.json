@@ -63,6 +63,7 @@
     "Tap a time to add. Drag a block to move it.": "Touchez un horaire pour ajouter. Glissez un créneau pour le déplacer.",
     "The whole series": "Toute la série",
     "This block repeats.": "Ce créneau revient chaque semaine.",
+    "This crosses :titles.": "Ce créneau croise :titles.",
     "This time": "Cette fois",
     "Timezone": "Fuseau horaire",
     "Title": "Titre",

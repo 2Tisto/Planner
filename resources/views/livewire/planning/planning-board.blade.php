@@ -243,6 +243,10 @@
                     </div>
                 </div>
 
+                @if ($overlaps !== [])
+                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('This crosses :titles.', ['titles' => implode(', ', $overlaps)]) }}</p>
+                @endif
+
                 <div>
                     <x-input-label for="moment-subject" :value="__('Subject')" />
                     <x-text-input wire:model="subjectName" id="moment-subject" type="text" class="mt-1 block w-full" placeholder="{{ __('Optional') }}" />
