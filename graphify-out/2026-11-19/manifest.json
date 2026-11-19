@@ -435,8 +435,8 @@
     "semantic_hash": ""
   },
   "lang/fr.json": {
-    "mtime": 1795075673.0120363,
-    "ast_hash": "307c7f4b75049b607dde9da0766e245c",
+    "mtime": 1795076645.6933315,
+    "ast_hash": "077fb8a3f7e7cf3949ec8621f4fef358",
     "semantic_hash": ""
   },
   "app/Actions/Category/CreateCategory.php": {
@@ -495,8 +495,8 @@
     "semantic_hash": ""
   },
   "app/Livewire/Planning/PlanningBoard.php": {
-    "mtime": 1795075843.8890898,
-    "ast_hash": "8a27a8bd427d57faacaa514ef884814c",
+    "mtime": 1795076654.567546,
+    "ast_hash": "641b684a9ebb1d15e641f71df1ce3ee5",
     "semantic_hash": ""
   },
   "app/Models/Category.php": {
@@ -565,8 +565,8 @@
     "semantic_hash": ""
   },
   "resources/views/livewire/planning/planning-board.blade.php": {
-    "mtime": 1795075974.514708,
-    "ast_hash": "575a9239e83810fff05b07b98874a6ce",
+    "mtime": 1795076645.6943314,
+    "ast_hash": "d80041eb7b8b14889945d0d5ffbb3528",
     "semantic_hash": ""
   },
   "resources/views/planning.blade.php": {
@@ -657,6 +657,16 @@
   "tests/Feature/RecurrenceTest.php": {
     "mtime": 1795075700.667491,
     "ast_hash": "b0cf170589c0d3569694bb771e8403d2",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/FindOverlaps.php": {
+    "mtime": 1795076637.9582012,
+    "ast_hash": "83cdd809fc32aab90c12e91a2c13bbea",
+    "semantic_hash": ""
+  },
+  "tests/Feature/ConflictTest.php": {
+    "mtime": 1795076654.6335545,
+    "ast_hash": "f46604cc0d9438fc96af7e41ee250d66",
     "semantic_hash": ""
   }
 }

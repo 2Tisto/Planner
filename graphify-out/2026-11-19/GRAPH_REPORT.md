@@ -1,16 +1,16 @@
 # Graph Report - Planner  (2026-11-19)
 
 ## Corpus Check
-- 131 files · ~22,089 words
+- 133 files · ~22,452 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 501 nodes · 789 edges · 78 communities (66 shown, 12 thin omitted)
+- 507 nodes · 807 edges · 84 communities (68 shown, 16 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `fc2e5a71`
+- Built from commit: `3e53f368`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -44,18 +44,24 @@
 - delete({{ $category->id }})
 - planning.planning-board
 - PlaceEventOnDay.php
+- Illuminate\Support\Carbon
+- SnapTime
+- PlanningBoard.php
+- Illuminate\Database\Eloquent\Relations\BelongsTo
+- ChangeOccurrence
+- OccurrenceMoment
 
 ## God Nodes (most connected - your core abstractions)
 1. `Event` - 61 edges
-2. `User` - 54 edges
-3. `PlanningBoard` - 29 edges
+2. `User` - 56 edges
+3. `PlanningBoard` - 30 edges
 4. `Category` - 24 edges
 5. `EventException` - 23 edges
 6. `OccurrenceMoment` - 13 edges
 7. `CategoryManager` - 13 edges
-8. `require-dev` - 11 edges
-9. `ChangeSeries` - 10 edges
-10. `EventAttributes` - 10 edges
+8. `ExpandWeek` - 12 edges
+9. `require-dev` - 11 edges
+10. `ChangeSeries` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `ChangeOccurrence` --references--> `OccurrenceMoment`  [EXTRACTED]
@@ -66,13 +72,13 @@
   app/Actions/Event/ChangeSeries.php → app/Actions/Event/OccurrenceMoment.php
 - `ChangeSeries` --references--> `SnapTime`  [EXTRACTED]
   app/Actions/Event/ChangeSeries.php → app/Actions/Event/SnapTime.php
-- `CreateEvent` --references--> `EventAttributes`  [EXTRACTED]
-  app/Actions/Event/CreateEvent.php → app/Actions/Event/EventAttributes.php
+- `ExpandWeek` --references--> `OccurrenceMoment`  [EXTRACTED]
+  app/Actions/Event/ExpandWeek.php → app/Actions/Event/OccurrenceMoment.php
 
 ## Import Cycles
 - None detected.
 
-## Communities (78 total, 12 thin omitted)
+## Communities (84 total, 16 thin omitted)
 
 ### Community 0 - "composer.json"
 Cohesion: 0.04
@@ -83,7 +89,7 @@ Cohesion: 0.08
 Nodes (26): scripts, dev, post-autoload-dump, post-create-project-cmd, post-root-package-install, post-update-cmd, pre-package-uninstall, setup (+18 more)
 
 ### Community 2 - "User.php"
-Cohesion: 0.08
+Cohesion: 0.09
 Nodes (10): CategoryFactory, EventFactory, SubjectFactory, UserFactory, DatabaseSeeder, Illuminate\Database\Console\Seeds\WithoutModelEvents, Illuminate\Database\Eloquent\Factories\Factory, Illuminate\Database\Seeder (+2 more)
 
 ### Community 3 - "devDependencies"
@@ -115,12 +121,12 @@ Cohesion: 0.25
 Nodes (7): About Laravel, Agentic Development, Code of Conduct, Contributing, Learning Laravel, License, Security Vulnerabilities
 
 ### Community 10 - "Event"
-Cohesion: 0.07
-Nodes (16): CancelOccurrence, ChangeOccurrence, Carbon, ChangeSeries, DeleteEvent, DuplicateEvent, ExpandWeek, MoveEvent (+8 more)
+Cohesion: 0.19
+Nodes (4): DeleteEvent, DuplicateEvent, Event, Carbon
 
 ### Community 11 - "EventException"
-Cohesion: 0.14
-Nodes (4): EventException, Carbon, Illuminate\Database\Eloquent\Relations\BelongsTo, self
+Cohesion: 0.17
+Nodes (4): ChangeSeries, EventException, Carbon, self
 
 ### Community 14 - "Laravel Application"
 Cohesion: 0.50
@@ -142,19 +148,27 @@ Nodes (4): SetUserLocale, Closure, Illuminate\Http\Request, Symfony\Component\Ht
 Cohesion: 0.17
 Nodes (11): applyPending(, cancelPending, closeComposer, duplicate, goToToday, openCreate(, openQuickAdd, remove (+3 more)
 
+### Community 78 - "Illuminate\Support\Carbon"
+Cohesion: 0.26
+Nodes (4): ExpandWeek, FindOverlaps, Occurrence, Illuminate\Support\Carbon
+
+### Community 79 - "SnapTime"
+Cohesion: 0.20
+Nodes (3): MoveEvent, ResizeEvent, SnapTime
+
 ## Knowledge Gaps
 - **97 isolated node(s):** `$schema`, `name`, `type`, `description`, `laravel` (+92 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `User` connect `User` to `User.php`, `Category`, `VerifyEmailController.php`, `Event`, `EventException`, `PlanningBoard`?**
-  _High betweenness centrality (0.103) - this node is a cross-community bridge._
-- **Why does `Event` connect `Event` to `User.php`, `User`, `AppServiceProvider`, `VerifyEmailController.php`, `EventException`, `PlanningBoard`?**
-  _High betweenness centrality (0.090) - this node is a cross-community bridge._
-- **Why does `PlanningBoard` connect `PlanningBoard` to `Event`, `Category`?**
+- **Why does `User` connect `User` to `User.php`, `Category`, `VerifyEmailController.php`, `PlanningBoard`, `Illuminate\Support\Carbon`, `PlanningBoard.php`, `Illuminate\Database\Eloquent\Relations\BelongsTo`?**
+  _High betweenness centrality (0.104) - this node is a cross-community bridge._
+- **Why does `Event` connect `Event` to `User`, `AppServiceProvider`, `VerifyEmailController.php`, `EventException`, `PlanningBoard`, `Illuminate\Support\Carbon`, `SnapTime`, `PlanningBoard.php`, `Illuminate\Database\Eloquent\Relations\BelongsTo`, `ChangeOccurrence`, `OccurrenceMoment`?**
+  _High betweenness centrality (0.089) - this node is a cross-community bridge._
+- **Why does `PlanningBoard` connect `PlanningBoard` to `PlanningBoard.php`, `Category`?**
   _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **Are the 4 inferred relationships involving `User` (e.g. with `.definition()` and `.definition()`) actually correct?**
   _`User` has 4 INFERRED edges - model-reasoned connections that need verification._

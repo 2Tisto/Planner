@@ -76,8 +76,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_actions_category_seeddefaultcategories",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "seeddefaultcategories.php"
     },
     {
@@ -87,8 +87,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_actions_category_seeddefaultcategories_seeddefaultcategories",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "seeddefaultcategories"
     },
     {
@@ -98,8 +98,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_actions_category_seeddefaultcategories_seeddefaultcategories_invoke",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": ".__invoke()"
     },
     {
@@ -142,8 +142,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_actions_event_canceloccurrence",
-      "community": 80,
-      "community_name": "PlanningBoard.php",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "canceloccurrence.php"
     },
     {
@@ -153,8 +153,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_actions_event_canceloccurrence_canceloccurrence",
-      "community": 80,
-      "community_name": "PlanningBoard.php",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "canceloccurrence"
     },
     {
@@ -164,8 +164,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_actions_event_canceloccurrence_canceloccurrence_invoke",
-      "community": 80,
-      "community_name": "PlanningBoard.php",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__invoke()"
     },
     {
@@ -175,8 +175,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_actions_event_changeoccurrence",
-      "community": 80,
-      "community_name": "PlanningBoard.php",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "changeoccurrence.php"
     },
     {
@@ -186,8 +186,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_actions_event_changeoccurrence_changeoccurrence",
-      "community": 82,
-      "community_name": "ChangeOccurrence",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "changeoccurrence"
     },
     {
@@ -197,8 +197,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_actions_event_changeoccurrence_changeoccurrence_construct",
-      "community": 82,
-      "community_name": "ChangeOccurrence",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__construct()"
     },
     {
@@ -208,8 +208,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_actions_event_changeoccurrence_changeoccurrence_move",
-      "community": 82,
-      "community_name": "ChangeOccurrence",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".move()"
     },
     {
@@ -219,8 +219,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_actions_event_changeoccurrence_changeoccurrence_resize",
-      "community": 82,
-      "community_name": "ChangeOccurrence",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".resize()"
     },
     {
@@ -230,8 +230,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "app_actions_event_changeoccurrence_changeoccurrence_keep",
-      "community": 82,
-      "community_name": "ChangeOccurrence",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".keep()"
     },
     {
@@ -241,8 +241,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_actions_event_changeoccurrence_php_carbon",
-      "community": 82,
-      "community_name": "ChangeOccurrence",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "carbon"
     },
     {
@@ -252,8 +252,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_actions_event_changeseries",
-      "community": 11,
-      "community_name": "EventException",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "changeseries.php"
     },
     {
@@ -263,8 +263,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_actions_event_changeseries_changeseries",
-      "community": 11,
-      "community_name": "EventException",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "changeseries"
     },
     {
@@ -274,8 +274,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_actions_event_changeseries_changeseries_construct",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__construct()"
     },
     {
@@ -285,8 +285,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_actions_event_changeseries_changeseries_move",
-      "community": 11,
-      "community_name": "EventException",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".move()"
     },
     {
@@ -296,8 +296,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "app_actions_event_changeseries_changeseries_resize",
-      "community": 11,
-      "community_name": "EventException",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".resize()"
     },
     {
@@ -307,8 +307,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "app_actions_event_changeseries_changeseries_release",
-      "community": 11,
-      "community_name": "EventException",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".release()"
     },
     {
@@ -318,8 +318,8 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "app_actions_event_changeseries_changeseries_blank",
-      "community": 11,
-      "community_name": "EventException",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".blank()"
     },
     {
@@ -483,8 +483,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_actions_event_expandweek",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "expandweek.php"
     },
     {
@@ -494,8 +494,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_actions_event_expandweek_expandweek",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "expandweek"
     },
     {
@@ -505,8 +505,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_actions_event_expandweek_expandweek_construct",
-      "community": 83,
-      "community_name": "OccurrenceMoment",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__construct()"
     },
     {
@@ -516,8 +516,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_actions_event_expandweek_expandweek_invoke",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__invoke()"
     },
     {
@@ -527,8 +527,8 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "app_actions_event_expandweek_expandweek_dates",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".dates()"
     },
     {
@@ -538,8 +538,8 @@
       "source_location": "L139",
       "_origin": "ast",
       "id": "app_actions_event_expandweek_expandweek_present",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".present()"
     },
     {
@@ -549,8 +549,8 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "app_actions_event_expandweek_expandweek_meta",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".meta()"
     },
     {
@@ -560,8 +560,8 @@
       "source_location": "L170",
       "_origin": "ast",
       "id": "app_actions_event_expandweek_expandweek_timezone",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".timezone()"
     },
     {
@@ -571,8 +571,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_actions_event_findoverlaps",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "findoverlaps.php"
     },
     {
@@ -582,8 +582,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_actions_event_findoverlaps_findoverlaps",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "findoverlaps"
     },
     {
@@ -593,8 +593,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_actions_event_findoverlaps_findoverlaps_construct",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__construct()"
     },
     {
@@ -604,8 +604,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_actions_event_findoverlaps_findoverlaps_invoke",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__invoke()"
     },
     {
@@ -615,8 +615,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_actions_event_moveevent",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "moveevent.php"
     },
     {
@@ -626,8 +626,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_actions_event_moveevent_moveevent",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "moveevent"
     },
     {
@@ -637,8 +637,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_actions_event_moveevent_moveevent_construct",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__construct()"
     },
     {
@@ -648,8 +648,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_actions_event_moveevent_moveevent_invoke",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__invoke()"
     },
     {
@@ -659,8 +659,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_actions_event_occurrence",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "occurrence.php"
     },
     {
@@ -670,8 +670,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_actions_event_occurrence_occurrence",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "occurrence"
     },
     {
@@ -681,8 +681,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_actions_event_occurrence_occurrence_construct",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__construct()"
     },
     {
@@ -692,7 +692,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_actions_event_occurrencemoment",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": "occurrencemoment.php"
     },
@@ -703,8 +703,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_actions_event_occurrencemoment_occurrencemoment",
-      "community": 83,
-      "community_name": "OccurrenceMoment",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "occurrencemoment"
     },
     {
@@ -714,8 +714,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_actions_event_occurrencemoment_occurrencemoment_invoke",
-      "community": 83,
-      "community_name": "OccurrenceMoment",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__invoke()"
     },
     {
@@ -725,8 +725,8 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "app_actions_event_occurrencemoment_occurrencemoment_occurs",
-      "community": 83,
-      "community_name": "OccurrenceMoment",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".occurs()"
     },
     {
@@ -736,8 +736,8 @@
       "source_location": "L107",
       "_origin": "ast",
       "id": "app_actions_event_occurrencemoment_occurrencemoment_exceptionfor",
-      "community": 83,
-      "community_name": "OccurrenceMoment",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".exceptionfor()"
     },
     {
@@ -747,8 +747,8 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "app_actions_event_occurrencemoment_occurrencemoment_timezone",
-      "community": 83,
-      "community_name": "OccurrenceMoment",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".timezone()"
     },
     {
@@ -846,8 +846,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_actions_event_resizeevent",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "resizeevent.php"
     },
     {
@@ -857,8 +857,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_actions_event_resizeevent_resizeevent",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "resizeevent"
     },
     {
@@ -868,8 +868,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_actions_event_resizeevent_resizeevent_construct",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__construct()"
     },
     {
@@ -879,8 +879,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_actions_event_resizeevent_resizeevent_invoke",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__invoke()"
     },
     {
@@ -890,8 +890,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_actions_event_snaptime",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "snaptime.php"
     },
     {
@@ -901,8 +901,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_actions_event_snaptime_snaptime",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "snaptime"
     },
     {
@@ -912,8 +912,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_actions_event_snaptime_snaptime_invoke",
-      "community": 79,
-      "community_name": "SnapTime",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".__invoke()"
     },
     {
@@ -1034,7 +1034,7 @@
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": "verifyemailcontroller.php"
     },
     {
@@ -1045,7 +1045,7 @@
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller_verifyemailcontroller",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": "verifyemailcontroller"
     },
     {
@@ -1056,7 +1056,7 @@
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller_verifyemailcontroller_invoke",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": ".__invoke()"
     },
     {
@@ -1067,7 +1067,7 @@
       "_origin": "ast",
       "id": "app_http_controllers_controller",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": "controller.php"
     },
     {
@@ -1078,7 +1078,7 @@
       "_origin": "ast",
       "id": "app_http_controllers_controller_controller",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": "controller"
     },
     {
@@ -1309,7 +1309,7 @@
       "_origin": "ast",
       "id": "app_livewire_forms_loginform",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": "loginform.php"
     },
     {
@@ -1320,7 +1320,7 @@
       "_origin": "ast",
       "id": "app_livewire_forms_loginform_loginform",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": "loginform"
     },
     {
@@ -1331,7 +1331,7 @@
       "_origin": "ast",
       "id": "app_livewire_forms_loginform_loginform_authenticate",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": ".authenticate()"
     },
     {
@@ -1342,7 +1342,7 @@
       "_origin": "ast",
       "id": "app_livewire_forms_loginform_loginform_ensureisnotratelimited",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": ".ensureisnotratelimited()"
     },
     {
@@ -1353,7 +1353,7 @@
       "_origin": "ast",
       "id": "app_livewire_forms_loginform_loginform_throttlekey",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": ".throttlekey()"
     },
     {
@@ -1363,8 +1363,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard",
-      "community": 80,
-      "community_name": "PlanningBoard.php",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "planningboard.php"
     },
     {
@@ -1382,7 +1382,7 @@
       "label": ".mount()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L75",
+      "source_location": "L77",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_mount",
       "community": 12,
@@ -1393,7 +1393,7 @@
       "label": ".selectDate()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L88",
+      "source_location": "L90",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_selectdate",
       "community": 12,
@@ -1401,10 +1401,32 @@
       "norm_label": ".selectdate()"
     },
     {
+      "label": ".showMonth()",
+      "file_type": "code",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L103",
+      "_origin": "ast",
+      "id": "app_livewire_planning_planningboard_planningboard_showmonth",
+      "community": 12,
+      "community_name": "PlanningBoard",
+      "norm_label": ".showmonth()"
+    },
+    {
+      "label": ".showDay()",
+      "file_type": "code",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L110",
+      "_origin": "ast",
+      "id": "app_livewire_planning_planningboard_planningboard_showday",
+      "community": 12,
+      "community_name": "PlanningBoard",
+      "norm_label": ".showday()"
+    },
+    {
       "label": ".shiftDay()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L101",
+      "source_location": "L119",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_shiftday",
       "community": 12,
@@ -1415,7 +1437,7 @@
       "label": ".goToToday()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L108",
+      "source_location": "L127",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_gototoday",
       "community": 12,
@@ -1426,7 +1448,7 @@
       "label": ".openQuickAdd()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L115",
+      "source_location": "L134",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_openquickadd",
       "community": 12,
@@ -1437,7 +1459,7 @@
       "label": ".openCreate()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L133",
+      "source_location": "L152",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_opencreate",
       "community": 12,
@@ -1448,7 +1470,7 @@
       "label": ".updatedRepeats()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L159",
+      "source_location": "L178",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_updatedrepeats",
       "community": 12,
@@ -1459,7 +1481,7 @@
       "label": ".openEdit()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L168",
+      "source_location": "L187",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_openedit",
       "community": 12,
@@ -1470,7 +1492,7 @@
       "label": ".closeComposer()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L216",
+      "source_location": "L235",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_closecomposer",
       "community": 12,
@@ -1481,7 +1503,7 @@
       "label": ".save()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L222",
+      "source_location": "L241",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_save",
       "community": 12,
@@ -1492,7 +1514,7 @@
       "label": ".moveBlock()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L283",
+      "source_location": "L302",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_moveblock",
       "community": 12,
@@ -1503,7 +1525,7 @@
       "label": ".resizeBlock()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L312",
+      "source_location": "L331",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_resizeblock",
       "community": 12,
@@ -1514,7 +1536,7 @@
       "label": ".applyPending()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L337",
+      "source_location": "L356",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_applypending",
       "community": 12,
@@ -1525,7 +1547,7 @@
       "label": ".cancelPending()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L365",
+      "source_location": "L384",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_cancelpending",
       "community": 12,
@@ -1536,7 +1558,7 @@
       "label": ".duplicate()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L370",
+      "source_location": "L389",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_duplicate",
       "community": 12,
@@ -1547,7 +1569,7 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L393",
+      "source_location": "L412",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_remove",
       "community": 12,
@@ -1558,7 +1580,7 @@
       "label": ".render()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L411",
+      "source_location": "L430",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_render",
       "community": 12,
@@ -1569,7 +1591,7 @@
       "label": ".board()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L437",
+      "source_location": "L456",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_board",
       "community": 12,
@@ -1580,7 +1602,7 @@
       "label": ".slots()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L512",
+      "source_location": "L531",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_slots",
       "community": 12,
@@ -1588,10 +1610,21 @@
       "norm_label": ".slots()"
     },
     {
+      "label": ".month()",
+      "file_type": "code",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L564",
+      "_origin": "ast",
+      "id": "app_livewire_planning_planningboard_planningboard_month",
+      "community": 12,
+      "community_name": "PlanningBoard",
+      "norm_label": ".month()"
+    },
+    {
       "label": ".selectedMoment()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L528",
+      "source_location": "L633",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_selectedmoment",
       "community": 12,
@@ -1613,7 +1646,7 @@
       "label": ".clock()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L539",
+      "source_location": "L644",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_clock",
       "community": 12,
@@ -1624,7 +1657,7 @@
       "label": ".color()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L548",
+      "source_location": "L653",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_color",
       "community": 12,
@@ -1635,7 +1668,7 @@
       "label": ".overlaps()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L560",
+      "source_location": "L665",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_overlaps",
       "community": 12,
@@ -1646,7 +1679,7 @@
       "label": ".firstDate()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L585",
+      "source_location": "L690",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_firstdate",
       "community": 12,
@@ -1657,7 +1690,7 @@
       "label": ".clearPending()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L596",
+      "source_location": "L701",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_clearpending",
       "community": 12,
@@ -1668,7 +1701,7 @@
       "label": ".owned()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L606",
+      "source_location": "L711",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_owned",
       "community": 12,
@@ -1679,7 +1712,7 @@
       "label": ".timezone()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L617",
+      "source_location": "L722",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_timezone",
       "community": 12,
@@ -1690,7 +1723,7 @@
       "label": ".user()",
       "file_type": "code",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L626",
+      "source_location": "L731",
       "_origin": "ast",
       "id": "app_livewire_planning_planningboard_planningboard_user",
       "community": 12,
@@ -1704,8 +1737,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_category",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "category.php"
     },
     {
@@ -1737,8 +1770,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "app_models_category_category_user",
-      "community": 81,
-      "community_name": "Illuminate\\Database\\Eloquent\\Relations\\BelongsTo",
+      "community": 7,
+      "community_name": "EventException",
       "norm_label": ".user()"
     },
     {
@@ -1748,8 +1781,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "app_models_category_category_scopeforuser",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": ".scopeforuser()"
     },
     {
@@ -1759,8 +1792,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_event",
-      "community": 80,
-      "community_name": "PlanningBoard.php",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "event.php"
     },
     {
@@ -1792,8 +1825,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "app_models_event_event_user",
-      "community": 81,
-      "community_name": "Illuminate\\Database\\Eloquent\\Relations\\BelongsTo",
+      "community": 7,
+      "community_name": "EventException",
       "norm_label": ".user()"
     },
     {
@@ -1803,8 +1836,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "app_models_event_event_category",
-      "community": 81,
-      "community_name": "Illuminate\\Database\\Eloquent\\Relations\\BelongsTo",
+      "community": 7,
+      "community_name": "EventException",
       "norm_label": ".category()"
     },
     {
@@ -1814,8 +1847,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "app_models_event_event_subject",
-      "community": 81,
-      "community_name": "Illuminate\\Database\\Eloquent\\Relations\\BelongsTo",
+      "community": 7,
+      "community_name": "EventException",
       "norm_label": ".subject()"
     },
     {
@@ -1858,8 +1891,8 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "app_models_event_event_scopeforuser",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": ".scopeforuser()"
     },
     {
@@ -1924,8 +1957,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_eventexception",
-      "community": 80,
-      "community_name": "PlanningBoard.php",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "eventexception.php"
     },
     {
@@ -1935,7 +1968,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": "eventexception"
     },
@@ -1946,7 +1979,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_casts",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": ".casts()"
     },
@@ -1958,7 +1991,7 @@
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_event",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": ".event()"
     },
     {
@@ -1968,8 +2001,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_user",
-      "community": 81,
-      "community_name": "Illuminate\\Database\\Eloquent\\Relations\\BelongsTo",
+      "community": 7,
+      "community_name": "EventException",
       "norm_label": ".user()"
     },
     {
@@ -1979,8 +2012,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_category",
-      "community": 81,
-      "community_name": "Illuminate\\Database\\Eloquent\\Relations\\BelongsTo",
+      "community": 7,
+      "community_name": "EventException",
       "norm_label": ".category()"
     },
     {
@@ -1990,8 +2023,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_subject",
-      "community": 81,
-      "community_name": "Illuminate\\Database\\Eloquent\\Relations\\BelongsTo",
+      "community": 7,
+      "community_name": "EventException",
       "norm_label": ".subject()"
     },
     {
@@ -2001,7 +2034,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_originaldate",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": ".originaldate()"
     },
@@ -2012,7 +2045,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_beginsat",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": ".beginsat()"
     },
@@ -2023,7 +2056,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_eventexception_php_carbon",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": "carbon"
     },
@@ -2034,7 +2067,7 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_finishesat",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": ".finishesat()"
     },
@@ -2045,7 +2078,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_subjectlabel",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": ".subjectlabel()"
     },
@@ -2056,7 +2089,7 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_remember",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": ".remember()"
     },
@@ -2067,7 +2100,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "self",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": "self"
     },
@@ -2078,7 +2111,7 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_datestring",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": ".datestring()"
     },
@@ -2089,7 +2122,7 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "app_models_eventexception_eventexception_moment",
-      "community": 11,
+      "community": 7,
       "community_name": "EventException",
       "norm_label": ".moment()"
     },
@@ -2100,8 +2133,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_subject",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "subject.php"
     },
     {
@@ -2111,8 +2144,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_models_subject_subject",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "subject"
     },
     {
@@ -2122,8 +2155,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_models_subject_subject_casts",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": ".casts()"
     },
     {
@@ -2133,8 +2166,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "app_models_subject_subject_user",
-      "community": 4,
-      "community_name": "User",
+      "community": 7,
+      "community_name": "EventException",
       "norm_label": ".user()"
     },
     {
@@ -2144,8 +2177,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "app_models_subject_subject_scopeforuser",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": ".scopeforuser()"
     },
     {
@@ -2298,8 +2331,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_eventpolicy",
-      "community": 4,
-      "community_name": "User",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "eventpolicy.php"
     },
     {
@@ -2309,8 +2342,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_policies_eventpolicy_eventpolicy",
-      "community": 4,
-      "community_name": "User",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "eventpolicy"
     },
     {
@@ -2331,8 +2364,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_policies_eventpolicy_eventpolicy_view",
-      "community": 4,
-      "community_name": "User",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".view()"
     },
     {
@@ -2342,8 +2375,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_policies_eventpolicy_eventpolicy_create",
-      "community": 4,
-      "community_name": "User",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".create()"
     },
     {
@@ -2353,8 +2386,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_policies_eventpolicy_eventpolicy_update",
-      "community": 4,
-      "community_name": "User",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".update()"
     },
     {
@@ -2364,8 +2397,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "app_policies_eventpolicy_eventpolicy_delete",
-      "community": 4,
-      "community_name": "User",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": ".delete()"
     },
     {
@@ -2375,8 +2408,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider",
-      "community": 5,
-      "community_name": "AppServiceProvider",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "appserviceprovider.php"
     },
     {
@@ -2386,8 +2419,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider",
-      "community": 5,
-      "community_name": "AppServiceProvider",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "appserviceprovider"
     },
     {
@@ -2397,8 +2430,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_register",
-      "community": 5,
-      "community_name": "AppServiceProvider",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": ".register()"
     },
     {
@@ -2408,8 +2441,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_boot",
-      "community": 5,
-      "community_name": "AppServiceProvider",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": ".boot()"
     },
     {
@@ -2419,8 +2452,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_voltserviceprovider",
-      "community": 5,
-      "community_name": "AppServiceProvider",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "voltserviceprovider.php"
     },
     {
@@ -2430,8 +2463,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_providers_voltserviceprovider_voltserviceprovider",
-      "community": 5,
-      "community_name": "AppServiceProvider",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "voltserviceprovider"
     },
     {
@@ -2441,8 +2474,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_providers_voltserviceprovider_voltserviceprovider_register",
-      "community": 5,
-      "community_name": "AppServiceProvider",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": ".register()"
     },
     {
@@ -2452,8 +2485,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_providers_voltserviceprovider_voltserviceprovider_boot",
-      "community": 5,
-      "community_name": "AppServiceProvider",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": ".boot()"
     },
     {
@@ -2581,8 +2614,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bootstrap_providers",
-      "community": 5,
-      "community_name": "AppServiceProvider",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "providers.php"
     },
     {
@@ -3923,8 +3956,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder",
-      "community": 2,
-      "community_name": "User.php",
+      "community": 5,
+      "community_name": "DatabaseSeeder.php",
       "norm_label": "databaseseeder.php"
     },
     {
@@ -3934,8 +3967,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder",
-      "community": 2,
-      "community_name": "User.php",
+      "community": 5,
+      "community_name": "DatabaseSeeder.php",
       "norm_label": "databaseseeder"
     },
     {
@@ -3945,8 +3978,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder_run",
-      "community": 2,
-      "community_name": "User.php",
+      "community": 5,
+      "community_name": "DatabaseSeeder.php",
       "norm_label": ".run()"
     },
     {
@@ -4665,6 +4698,28 @@
       "norm_label": "gototoday"
     },
     {
+      "label": "showDay",
+      "file_type": "code",
+      "source_file": "resources/views/livewire/planning/planning-board.blade.php",
+      "source_location": null,
+      "_origin": "ast",
+      "id": "showday",
+      "community": 54,
+      "community_name": "planning-board.blade.php",
+      "norm_label": "showday"
+    },
+    {
+      "label": "showMonth",
+      "file_type": "code",
+      "source_file": "resources/views/livewire/planning/planning-board.blade.php",
+      "source_location": null,
+      "_origin": "ast",
+      "id": "showmonth",
+      "community": 54,
+      "community_name": "planning-board.blade.php",
+      "norm_label": "showmonth"
+    },
+    {
       "label": "selectDate(",
       "file_type": "code",
       "source_file": "resources/views/livewire/planning/planning-board.blade.php",
@@ -4707,6 +4762,17 @@
       "community": 54,
       "community_name": "planning-board.blade.php",
       "norm_label": "opencreate("
+    },
+    {
+      "label": "openEdit({{ $block[",
+      "file_type": "code",
+      "source_file": "resources/views/livewire/planning/planning-board.blade.php",
+      "source_location": null,
+      "_origin": "ast",
+      "id": "openedit_block",
+      "community": 54,
+      "community_name": "planning-board.blade.php",
+      "norm_label": "openedit({{ $block["
     },
     {
       "label": "closeComposer",
@@ -4892,7 +4958,7 @@
       "_origin": "ast",
       "id": "routes_auth",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": "routes/auth.php"
     },
     {
@@ -5001,8 +5067,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_categorytest",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "categorytest.php"
     },
     {
@@ -5012,8 +5078,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_conflicttest",
-      "community": 80,
-      "community_name": "PlanningBoard.php",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "conflicttest.php"
     },
     {
@@ -5028,14 +5094,25 @@
       "norm_label": "feature/exampletest.php"
     },
     {
+      "label": "MonthTest.php",
+      "file_type": "code",
+      "source_file": "tests/Feature/MonthTest.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_feature_monthtest",
+      "community": 2,
+      "community_name": "User.php",
+      "norm_label": "monthtest.php"
+    },
+    {
       "label": "PlanningTest.php",
       "file_type": "code",
       "source_file": "tests/Feature/PlanningTest.php",
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_planningtest",
-      "community": 80,
-      "community_name": "PlanningBoard.php",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "planningtest.php"
     },
     {
@@ -5056,8 +5133,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_recurrencetest",
-      "community": 80,
-      "community_name": "PlanningBoard.php",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "recurrencetest.php"
     },
     {
@@ -5331,8 +5408,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "illuminate_support_carbon",
-      "community": 78,
-      "community_name": "Illuminate\\Support\\Carbon",
+      "community": 10,
+      "community_name": "Event",
       "norm_label": "illuminate\\support\\carbon"
     },
     {
@@ -5343,7 +5420,7 @@
       "_origin": "ast",
       "id": "illuminate_contracts_auth_mustverifyemail",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": "illuminate\\contracts\\auth\\mustverifyemail"
     },
     {
@@ -5354,7 +5431,7 @@
       "_origin": "ast",
       "id": "illuminate_foundation_auth_emailverificationrequest",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": "illuminate\\foundation\\auth\\emailverificationrequest"
     },
     {
@@ -5365,7 +5442,7 @@
       "_origin": "ast",
       "id": "illuminate_http_redirectresponse",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": "illuminate\\http\\redirectresponse"
     },
     {
@@ -5431,7 +5508,7 @@
       "_origin": "ast",
       "id": "livewire_form",
       "community": 7,
-      "community_name": "VerifyEmailController.php",
+      "community_name": "EventException",
       "norm_label": "livewire\\form"
     },
     {
@@ -5441,8 +5518,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "illuminate_database_eloquent_builder",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "illuminate\\database\\eloquent\\builder"
     },
     {
@@ -5452,8 +5529,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "illuminate_database_eloquent_factories_hasfactory",
-      "community": 4,
-      "community_name": "User",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "illuminate\\database\\eloquent\\factories\\hasfactory"
     },
     {
@@ -5463,8 +5540,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "illuminate_database_eloquent_model",
-      "community": 80,
-      "community_name": "PlanningBoard.php",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "illuminate\\database\\eloquent\\model"
     },
     {
@@ -5474,8 +5551,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "illuminate_database_eloquent_relations_belongsto",
-      "community": 81,
-      "community_name": "Illuminate\\Database\\Eloquent\\Relations\\BelongsTo",
+      "community": 7,
+      "community_name": "EventException",
       "norm_label": "illuminate\\database\\eloquent\\relations\\belongsto"
     },
     {
@@ -5518,8 +5595,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "illuminate_support_serviceprovider",
-      "community": 5,
-      "community_name": "AppServiceProvider",
+      "community": 2,
+      "community_name": "User.php",
       "norm_label": "illuminate\\support\\serviceprovider"
     },
     {
@@ -5562,8 +5639,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "illuminate_database_console_seeds_withoutmodelevents",
-      "community": 2,
-      "community_name": "User.php",
+      "community": 5,
+      "community_name": "DatabaseSeeder.php",
       "norm_label": "illuminate\\database\\console\\seeds\\withoutmodelevents"
     },
     {
@@ -5573,8 +5650,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "illuminate_database_seeder",
-      "community": 2,
-      "community_name": "User.php",
+      "community": 5,
+      "community_name": "DatabaseSeeder.php",
       "norm_label": "illuminate\\database\\seeder"
     },
     {
@@ -5816,7 +5893,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L75",
+      "source_location": "L77",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -6004,7 +6081,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L393",
+      "source_location": "L412",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -6167,7 +6244,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L337",
+      "source_location": "L356",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -6437,7 +6514,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L337",
+      "source_location": "L356",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -6650,7 +6727,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L222",
+      "source_location": "L241",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -6744,7 +6821,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L393",
+      "source_location": "L412",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -6826,7 +6903,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L370",
+      "source_location": "L389",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -7530,7 +7607,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L283",
+      "source_location": "L302",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -7715,7 +7792,7 @@
       "relation": "references_constant",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L184",
+      "source_location": "L203",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -7916,7 +7993,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L222",
+      "source_location": "L241",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -8103,7 +8180,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L312",
+      "source_location": "L331",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -8254,7 +8331,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L222",
+      "source_location": "L241",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -9386,6 +9463,18 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "tests/Feature/MonthTest.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_feature_monthtest",
+      "target": "app_livewire_planning_planningboard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "tests/Feature/PlanningTest.php",
       "source_location": "L3",
       "weight": 1.0,
@@ -9410,7 +9499,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L337",
+      "source_location": "L356",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9421,7 +9510,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L437",
+      "source_location": "L456",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9432,7 +9521,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L365",
+      "source_location": "L384",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9443,7 +9532,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L596",
+      "source_location": "L701",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9454,7 +9543,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L539",
+      "source_location": "L644",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9465,7 +9554,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L216",
+      "source_location": "L235",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9476,7 +9565,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L548",
+      "source_location": "L653",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9487,7 +9576,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L370",
+      "source_location": "L389",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9498,7 +9587,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L585",
+      "source_location": "L690",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9509,7 +9598,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L108",
+      "source_location": "L127",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9520,7 +9609,18 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L75",
+      "source_location": "L564",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard",
+      "target": "app_livewire_planning_planningboard_planningboard_month",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9531,7 +9631,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L283",
+      "source_location": "L302",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9542,7 +9642,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L133",
+      "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9553,7 +9653,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L168",
+      "source_location": "L187",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9564,7 +9664,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L115",
+      "source_location": "L134",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9575,7 +9675,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L560",
+      "source_location": "L665",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9586,7 +9686,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L606",
+      "source_location": "L711",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9597,7 +9697,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L393",
+      "source_location": "L412",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9608,7 +9708,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L411",
+      "source_location": "L430",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9619,7 +9719,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L312",
+      "source_location": "L331",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9630,7 +9730,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L222",
+      "source_location": "L241",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9641,7 +9741,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L88",
+      "source_location": "L90",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9652,7 +9752,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L528",
+      "source_location": "L633",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9663,7 +9763,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L101",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9674,7 +9774,29 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L512",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard",
+      "target": "app_livewire_planning_planningboard_planningboard_showday",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard",
+      "target": "app_livewire_planning_planningboard_planningboard_showmonth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L531",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9685,7 +9807,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L617",
+      "source_location": "L722",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9696,7 +9818,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L159",
+      "source_location": "L178",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9707,7 +9829,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L626",
+      "source_location": "L731",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard",
@@ -9730,7 +9852,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L83",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_mount",
@@ -9742,7 +9864,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L83",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_mount",
@@ -9754,7 +9876,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L77",
+      "source_location": "L79",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_mount",
@@ -9766,7 +9888,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L90",
+      "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_selectdate",
@@ -9778,7 +9900,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L98",
+      "source_location": "L100",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_selectdate",
@@ -9790,7 +9912,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L97",
+      "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_selectdate",
@@ -9802,7 +9924,43 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L103",
+      "source_location": "L113",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard_showday",
+      "target": "app_livewire_planning_planningboard_planningboard_selectdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard_showmonth",
+      "target": "app_livewire_planning_planningboard_planningboard_clearpending",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard_showmonth",
+      "target": "app_livewire_planning_planningboard_planningboard_closecomposer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L121",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_shiftday",
@@ -9814,7 +9972,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L105",
+      "source_location": "L124",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_shiftday",
@@ -9826,7 +9984,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L104",
+      "source_location": "L123",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_shiftday",
@@ -9838,7 +9996,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L110",
+      "source_location": "L129",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_gototoday",
@@ -9850,7 +10008,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L112",
+      "source_location": "L131",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_gototoday",
@@ -9862,7 +10020,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L111",
+      "source_location": "L130",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_gototoday",
@@ -9874,7 +10032,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L110",
+      "source_location": "L129",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_gototoday",
@@ -9886,7 +10044,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L110",
+      "source_location": "L129",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_gototoday",
@@ -9898,7 +10056,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L117",
+      "source_location": "L136",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_openquickadd",
@@ -9910,7 +10068,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L130",
+      "source_location": "L149",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_openquickadd",
@@ -9922,7 +10080,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L117",
+      "source_location": "L136",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_openquickadd",
@@ -9934,7 +10092,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L117",
+      "source_location": "L136",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_openquickadd",
@@ -9946,7 +10104,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L135",
+      "source_location": "L154",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_opencreate",
@@ -9958,7 +10116,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L156",
+      "source_location": "L175",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_opencreate",
@@ -9970,7 +10128,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L165",
+      "source_location": "L184",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_updatedrepeats",
@@ -9982,7 +10140,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L213",
+      "source_location": "L232",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_openedit",
@@ -9994,7 +10152,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L170",
+      "source_location": "L189",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_openedit",
@@ -10006,7 +10164,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L173",
+      "source_location": "L192",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_openedit",
@@ -10018,7 +10176,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L173",
+      "source_location": "L192",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_openedit",
@@ -10030,7 +10188,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L390",
+      "source_location": "L409",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_duplicate",
@@ -10042,7 +10200,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L408",
+      "source_location": "L427",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_remove",
@@ -10054,7 +10212,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L280",
+      "source_location": "L299",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_save",
@@ -10066,7 +10224,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L257",
+      "source_location": "L276",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_save",
@@ -10078,7 +10236,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L233",
+      "source_location": "L252",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_save",
@@ -10090,7 +10248,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L224",
+      "source_location": "L243",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_save",
@@ -10102,7 +10260,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L231",
+      "source_location": "L250",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_save",
@@ -10113,7 +10271,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L285",
+      "source_location": "L304",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_moveblock",
@@ -10125,7 +10283,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L314",
+      "source_location": "L333",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_resizeblock",
@@ -10137,7 +10295,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L362",
+      "source_location": "L381",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_applypending",
@@ -10149,7 +10307,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L343",
+      "source_location": "L362",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_applypending",
@@ -10161,7 +10319,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L367",
+      "source_location": "L386",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_cancelpending",
@@ -10173,7 +10331,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L381",
+      "source_location": "L400",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_duplicate",
@@ -10185,7 +10343,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L378",
+      "source_location": "L397",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_duplicate",
@@ -10197,7 +10355,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L380",
+      "source_location": "L399",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_duplicate",
@@ -10209,7 +10367,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L380",
+      "source_location": "L399",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_duplicate",
@@ -10221,7 +10379,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L379",
+      "source_location": "L398",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_duplicate",
@@ -10232,7 +10390,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L399",
+      "source_location": "L418",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_remove",
@@ -10244,7 +10402,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L414",
+      "source_location": "L433",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_render",
@@ -10256,7 +10414,19 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L416",
+      "source_location": "L433",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard_render",
+      "target": "app_livewire_planning_planningboard_planningboard_month",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L435",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_render",
@@ -10268,7 +10438,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L415",
+      "source_location": "L434",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_render",
@@ -10279,7 +10449,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L411",
+      "source_location": "L430",
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
@@ -10292,7 +10462,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L441",
+      "source_location": "L460",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_board",
@@ -10304,7 +10474,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L474",
+      "source_location": "L493",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_board",
@@ -10316,7 +10486,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L476",
+      "source_location": "L495",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_board",
@@ -10328,7 +10498,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L443",
+      "source_location": "L462",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_board",
@@ -10340,7 +10510,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L504",
+      "source_location": "L523",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_board",
@@ -10352,7 +10522,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L440",
+      "source_location": "L459",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_board",
@@ -10364,7 +10534,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L439",
+      "source_location": "L458",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_board",
@@ -10376,7 +10546,67 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L530",
+      "source_location": "L568",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard_month",
+      "target": "app_livewire_planning_planningboard_php_carbon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L597",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard_month",
+      "target": "app_livewire_planning_planningboard_planningboard_color",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L570",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard_month",
+      "target": "app_livewire_planning_planningboard_planningboard_selectedmoment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L567",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard_month",
+      "target": "app_livewire_planning_planningboard_planningboard_timezone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L566",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_livewire_planning_planningboard_planningboard_month",
+      "target": "app_livewire_planning_planningboard_planningboard_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Livewire/Planning/PlanningBoard.php",
+      "source_location": "L635",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_selectedmoment",
@@ -10387,7 +10617,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L528",
+      "source_location": "L633",
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
@@ -10400,7 +10630,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L566",
+      "source_location": "L671",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_overlaps",
@@ -10411,7 +10641,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L539",
+      "source_location": "L644",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -10424,7 +10654,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L563",
+      "source_location": "L668",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_overlaps",
@@ -10436,7 +10666,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L562",
+      "source_location": "L667",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_overlaps",
@@ -10448,7 +10678,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L590",
+      "source_location": "L695",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_firstdate",
@@ -10459,7 +10689,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L585",
+      "source_location": "L690",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -10472,7 +10702,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L608",
+      "source_location": "L713",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_owned",
@@ -10484,7 +10714,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L606",
+      "source_location": "L711",
       "weight": 1.0,
       "_origin": "ast",
       "source": "app_livewire_planning_planningboard_planningboard_owned",
@@ -10495,7 +10725,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L617",
+      "source_location": "L722",
       "weight": 1.0,
       "context": "parameter_type",
       "_origin": "ast",
@@ -10507,7 +10737,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Livewire/Planning/PlanningBoard.php",
-      "source_location": "L626",
+      "source_location": "L731",
       "weight": 1.0,
       "context": "return_type",
       "_origin": "ast",
@@ -10876,6 +11106,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_feature_conflicttest",
+      "target": "app_models_event",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/Feature/MonthTest.php",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_feature_monthtest",
       "target": "app_models_event",
       "confidence_score": 1.0
     },
@@ -12110,6 +12352,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_feature_exampletest",
+      "target": "app_models_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/Feature/MonthTest.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_feature_monthtest",
       "target": "app_models_user",
       "confidence_score": 1.0
     },
@@ -14636,6 +14890,17 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "resources_views_livewire_planning_planning_board_blade",
+      "target": "openedit_block"
+    },
+    {
+      "relation": "binds_method",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "resources/views/livewire/planning/planning-board.blade.php",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "resources_views_livewire_planning_planning_board_blade",
       "target": "openquickadd"
     },
     {
@@ -14681,6 +14946,28 @@
       "_origin": "ast",
       "source": "resources_views_livewire_planning_planning_board_blade",
       "target": "shiftday_1"
+    },
+    {
+      "relation": "binds_method",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "resources/views/livewire/planning/planning-board.blade.php",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "resources_views_livewire_planning_planning_board_blade",
+      "target": "showday"
+    },
+    {
+      "relation": "binds_method",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "resources/views/livewire/planning/planning-board.blade.php",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "resources_views_livewire_planning_planning_board_blade",
+      "target": "showmonth"
     },
     {
       "relation": "uses_component",
@@ -14927,5 +15214,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3e53f368831b1fe1aa83301b42b60ae470003368"
+  "built_at_commit": "2ba9e8cc618a5f5c67ad299a9dc22cc5f2b7454a"
 }

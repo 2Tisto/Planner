@@ -12,17 +12,27 @@
         </div>
 
         <div class="mt-6 flex items-center gap-2">
-            <button type="button" wire:click="shiftDay(-1)" class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg text-slate-500 shadow-sm hover:text-slate-800 dark:bg-gray-800 dark:text-slate-300" aria-label="{{ __('Previous day') }}">
+            <button type="button" wire:click="shiftDay(-1)" class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg text-slate-500 shadow-sm hover:text-slate-800 dark:bg-gray-800 dark:text-slate-300" aria-label="{{ $span === 'month' ? __('Previous month') : __('Previous day') }}">
                 ‹
             </button>
             <button type="button" wire:click="goToToday" class="rounded-full px-4 py-2 text-sm text-slate-600 hover:bg-white dark:text-slate-300 dark:hover:bg-gray-800">
                 {{ __('Today') }}
             </button>
-            <button type="button" wire:click="shiftDay(1)" class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg text-slate-500 shadow-sm hover:text-slate-800 dark:bg-gray-800 dark:text-slate-300" aria-label="{{ __('Next day') }}">
+            <button type="button" wire:click="shiftDay(1)" class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg text-slate-500 shadow-sm hover:text-slate-800 dark:bg-gray-800 dark:text-slate-300" aria-label="{{ $span === 'month' ? __('Next month') : __('Next day') }}">
                 ›
             </button>
+
+            <div class="ml-auto flex rounded-full bg-white p-1 text-sm shadow-sm dark:bg-gray-800">
+                <button type="button" wire:click="showDay" @class(['rounded-full px-3 py-1', 'bg-slate-800 text-white dark:bg-slate-100 dark:text-slate-900' => $span === 'day', 'text-slate-500' => $span !== 'day'])>
+                    {{ __('Day') }}
+                </button>
+                <button type="button" wire:click="showMonth" @class(['rounded-full px-3 py-1', 'bg-slate-800 text-white dark:bg-slate-100 dark:text-slate-900' => $span === 'month', 'text-slate-500' => $span !== 'month'])>
+                    {{ __('Month') }}
+                </button>
+            </div>
         </div>
 
+        @if ($span === 'day')
         <div class="mt-4 flex gap-2 overflow-x-auto pb-1">
             @foreach ($board['days'] as $day)
                 <button
@@ -40,6 +50,7 @@
                 </button>
             @endforeach
         </div>
+        @endif
 
         <p class="mt-5 text-sm text-slate-500 dark:text-slate-400">{{ $board['hint'] }}</p>
 
@@ -58,6 +69,7 @@
             </div>
         @endif
 
+        @if ($span === 'day')
         <div class="mt-3 flex">
             <div class="w-12 shrink-0">
                 @foreach ($board['slots'] as $slot)
@@ -186,6 +198,47 @@
                 @endforeach
             </div>
         </div>
+        @else
+        <div class="mt-4 grid grid-cols-7 gap-1">
+            @foreach ($board['weekdays'] as $weekday)
+                <div class="px-1 pb-1 text-xs text-slate-400">{{ $weekday }}</div>
+            @endforeach
+
+            @foreach ($board['cells'] as $cell)
+                <div @class([
+                    'min-h-24 rounded-2xl p-1',
+                    'bg-white shadow-sm dark:bg-gray-800' => $cell['inMonth'],
+                    'ring-2 ring-slate-700' => $cell['selected'],
+                ]) wire:key="month-{{ $cell['date'] }}">
+                    <button type="button" wire:click="showDay('{{ $cell['date'] }}')" class="block" aria-label="{{ __('Open') }} {{ $cell['date'] }}">
+                        <span @class([
+                            'inline-flex h-8 w-8 items-center justify-center rounded-full text-sm',
+                            'bg-slate-800 text-white dark:bg-slate-100 dark:text-slate-900' => $cell['today'],
+                            'font-semibold text-slate-800 dark:text-slate-100' => $cell['inMonth'] && ! $cell['today'],
+                            'text-slate-400' => ! $cell['inMonth'],
+                        ])>{{ $cell['number'] }}</span>
+                    </button>
+
+                    @foreach ($cell['blocks'] as $block)
+                        <button
+                            type="button"
+                            wire:click="openEdit({{ $block['id'] }}, '{{ $block['date'] }}')"
+                            class="mt-1 block w-full truncate rounded-full px-2 py-1 text-left text-xs text-slate-800"
+                            style="background: {{ $block['color'] }}"
+                        >
+                            {{ $block['title'] }}
+                        </button>
+                    @endforeach
+
+                    @if ($cell['more'] > 0)
+                        <button type="button" wire:click="showDay('{{ $cell['date'] }}')" class="mt-1 block px-1 text-left text-xs text-slate-400">
+                            {{ __(':count more', ['count' => $cell['more']]) }}
+                        </button>
+                    @endif
+                </div>
+            @endforeach
+        </div>
+        @endif
     </div>
 
     @if ($composerOpen)

@@ -34,6 +34,8 @@ class PlanningBoard extends Component
 
     public string $selectedDate = '';
 
+    public string $span = 'day';
+
     public bool $composerOpen = false;
 
     public ?int $editingId = null;
@@ -98,9 +100,26 @@ class PlanningBoard extends Component
         $this->clearPending();
     }
 
+    public function showMonth(): void
+    {
+        $this->span = 'month';
+        $this->closeComposer();
+        $this->clearPending();
+    }
+
+    public function showDay(?string $date = null): void
+    {
+        if (is_string($date) && $date !== '') {
+            $this->selectDate($date);
+        }
+
+        $this->span = 'day';
+    }
+
     public function shiftDay(int $days): void
     {
-        $this->selectedDate = Carbon::parse($this->selectedDate)->addDays($days)->toDateString();
+        $moment = Carbon::parse($this->selectedDate);
+        $this->selectedDate = ($this->span === 'month' ? $moment->addMonths($days) : $moment->addDays($days))->toDateString();
         $this->closeComposer();
         $this->clearPending();
     }
@@ -411,7 +430,7 @@ class PlanningBoard extends Component
     public function render(): View
     {
         return view('livewire.planning.planning-board', [
-            'board' => $this->board(),
+            'board' => $this->span === 'month' ? $this->month() : $this->board(),
             'categories' => $this->user()->categories()->orderBy('position')->orderBy('id')->get(),
             'overlaps' => $this->composerOpen ? $this->overlaps() : [],
         ]);
@@ -523,6 +542,92 @@ class PlanningBoard extends Component
         }
 
         return $slots;
+    }
+
+    /**
+     * @return array{
+     *     title: string,
+     *     label: string,
+     *     hint: string,
+     *     weekdays: list<string>,
+     *     cells: list<array{
+     *         date: string,
+     *         number: string,
+     *         inMonth: bool,
+     *         today: bool,
+     *         selected: bool,
+     *         blocks: list<array{id: int, date: string, title: string, color: string}>,
+     *         more: int
+     *     }>
+     * }
+     */
+    private function month(): array
+    {
+        $user = $this->user();
+        $timezone = $this->timezone($user);
+        Carbon::setLocale(app()->getLocale());
+
+        $selected = $this->selectedMoment($timezone);
+        $today = Carbon::now($timezone);
+        $monthStart = $selected->copy()->startOfMonth();
+        $monthEnd = $selected->copy()->endOfMonth()->startOfDay();
+        $lead = ($monthStart->dayOfWeek - $user->week_starts_on + 7) % 7;
+        $gridStart = $monthStart->copy()->subDays($lead)->startOfDay();
+        $lastColumn = ($user->week_starts_on + 6) % 7;
+        $tail = ($lastColumn - $monthEnd->dayOfWeek + 7) % 7;
+        $gridEnd = $monthEnd->copy()->addDays($tail + 1)->startOfDay();
+        $occurrences = app(ExpandWeek::class)($user, $gridStart, $gridEnd);
+        $byDate = [];
+
+        foreach ($occurrences as $occurrence) {
+            $cursor = $occurrence->starts->copy()->timezone($timezone)->startOfDay();
+            $finish = $occurrence->ends->copy()->timezone($timezone);
+
+            if ($finish->isStartOfDay()) {
+                $finish->subSecond();
+            }
+
+            $last = $finish->copy()->startOfDay();
+
+            while ($cursor->lessThanOrEqualTo($last)) {
+                $byDate[$cursor->toDateString()][] = [
+                    'id' => $occurrence->id,
+                    'date' => $occurrence->date,
+                    'title' => $occurrence->title,
+                    'color' => $this->color($occurrence->color),
+                ];
+                $cursor->addDay();
+            }
+        }
+
+        $weekdays = [];
+
+        for ($index = 0; $index < 7; $index++) {
+            $weekdays[] = $gridStart->copy()->addDays($index)->isoFormat('ddd');
+        }
+
+        $cells = [];
+
+        for ($day = $gridStart->copy(); $day->lessThan($gridEnd); $day->addDay()) {
+            $blocks = $byDate[$day->toDateString()] ?? [];
+            $cells[] = [
+                'date' => $day->toDateString(),
+                'number' => $day->isoFormat('D'),
+                'inMonth' => $day->month === $monthStart->month,
+                'today' => $day->isSameDay($today),
+                'selected' => $day->isSameDay($selected),
+                'blocks' => array_slice($blocks, 0, 3),
+                'more' => max(0, count($blocks) - 3),
+            ];
+        }
+
+        return [
+            'title' => $monthStart->isoFormat('MMMM'),
+            'label' => $monthStart->isoFormat('YYYY'),
+            'hint' => (string) __('Tap a day to open it.'),
+            'weekdays' => $weekdays,
+            'cells' => $cells,
+        ];
     }
 
     private function selectedMoment(string $timezone): Carbon
