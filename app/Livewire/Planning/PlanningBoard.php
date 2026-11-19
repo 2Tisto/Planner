@@ -17,6 +17,7 @@ use App\Actions\Event\MoveEvent;
 use App\Actions\Event\OccurrenceMoment;
 use App\Actions\Event\OverrideOccurrence;
 use App\Actions\Event\PlaceEventOnDay;
+use App\Actions\Event\ReadPhrase;
 use App\Actions\Event\ResizeEvent;
 use App\Actions\Event\UpdateEvent;
 use App\Models\Event;
@@ -35,6 +36,8 @@ class PlanningBoard extends Component
     public string $selectedDate = '';
 
     public string $span = 'day';
+
+    public string $phrase = '';
 
     public bool $composerOpen = false;
 
@@ -147,6 +150,41 @@ class PlanningBoard extends Component
         }
 
         $this->openCreate($moment->toDateString(), sprintf('%02d:%02d', $hour, $minute));
+    }
+
+    public function draft(ReadPhrase $read): void
+    {
+        $phrase = $read($this->phrase);
+
+        if ($phrase === null) {
+            return;
+        }
+
+        $date = $phrase->weekday === null
+            ? $this->selectedDate
+            : $this->upcoming($phrase->weekday);
+        $starts = $phrase->starts ?? '08:00';
+
+        $this->openCreate($date, $starts);
+        $this->title = $phrase->title;
+        $this->subjectName = $phrase->subject;
+        $this->location = $phrase->location;
+
+        if ($phrase->ends !== null) {
+            $this->ends = $phrase->ends;
+        }
+
+        if ($phrase->category !== null) {
+            $categoryId = $this->user()->categories()->where('name', $phrase->category)->value('id');
+            $this->categoryId = is_numeric($categoryId) ? (int) $categoryId : $this->categoryId;
+        }
+
+        if ($phrase->weekly) {
+            $this->repeats = true;
+            $this->until = Carbon::parse($date)->addWeeks(16)->toDateString();
+        }
+
+        $this->phrase = '';
     }
 
     public function openCreate(string $date, string $starts): void
@@ -628,6 +666,14 @@ class PlanningBoard extends Component
             'weekdays' => $weekdays,
             'cells' => $cells,
         ];
+    }
+
+    private function upcoming(int $weekday): string
+    {
+        $moment = $this->selectedMoment($this->timezone($this->user()));
+        $shift = ($weekday - $moment->dayOfWeek + 7) % 7;
+
+        return $moment->addDays($shift)->toDateString();
     }
 
     private function selectedMoment(string $timezone): Carbon

@@ -11,6 +11,14 @@
             </button>
         </div>
 
+        <form wire:submit="draft" class="mt-4 flex gap-2">
+            <input wire:model="phrase" type="text" placeholder="{{ __('For example: TP réseaux mardi 14h-17h.') }}" aria-label="{{ __('Add a moment') }}" class="min-w-0 flex-1 rounded-full bg-white px-4 py-2 text-sm text-slate-800 shadow-sm dark:bg-gray-800 dark:text-slate-100" />
+            <button type="submit" class="shrink-0 rounded-full bg-white px-4 py-2 text-sm text-slate-600 shadow-sm hover:text-slate-800 dark:bg-gray-800 dark:text-slate-300">
+                {{ __('Prepare') }}
+            </button>
+        </form>
+        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">{{ __('We prepare the block. You place it.') }}</p>
+
         <div class="mt-6 flex items-center gap-2">
             <button type="button" wire:click="shiftDay(-1)" class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg text-slate-500 shadow-sm hover:text-slate-800 dark:bg-gray-800 dark:text-slate-300" aria-label="{{ $span === 'month' ? __('Previous month') : __('Previous day') }}">
                 ‹

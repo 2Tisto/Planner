@@ -1,15 +1,16 @@
 {
   "0": "composer.json",
   "1": "scripts",
-  "2": "User.php",
+  "2": "PlanningBoard.php",
   "3": "devDependencies",
-  "4": "User",
+  "4": "EventAttributes",
   "5": "DatabaseSeeder.php",
-  "6": "Category",
+  "6": "User",
   "7": "EventException",
   "8": "Illuminate\\View\\Component",
   "9": "README.md",
   "10": "Event",
+  "11": "ReadPhrase",
   "12": "PlanningBoard",
   "13": "Pest.php",
   "14": "Laravel Application",
@@ -74,6 +75,8 @@
   "73": "category.category-manager",
   "74": "delete({{ $category->id }})",
   "75": "planning.planning-board",
-  "76": "PlaceEventOnDay.php",
-  "77": "2026_11_19_005000_create_event_exceptions_table.php"
+  "76": "AppServiceProvider.php",
+  "77": "2026_11_19_005000_create_event_exceptions_table.php",
+  "78": "VerifyEmailController.php",
+  "79": "LoginForm"
 }
