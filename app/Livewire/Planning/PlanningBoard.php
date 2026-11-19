@@ -7,7 +7,10 @@ namespace App\Livewire\Planning;
 use App\Actions\Category\SeedDefaultCategories;
 use App\Actions\Event\CreateEvent;
 use App\Actions\Event\DeleteEvent;
+use App\Actions\Event\DuplicateEvent;
+use App\Actions\Event\MoveEvent;
 use App\Actions\Event\PlaceEventOnDay;
+use App\Actions\Event\ResizeEvent;
 use App\Actions\Event\UpdateEvent;
 use App\Models\Event;
 use App\Models\User;
@@ -185,6 +188,51 @@ class PlanningBoard extends Component
         $this->closeComposer();
     }
 
+    public function moveBlock(int $eventId, string $date, string $starts, MoveEvent $move): void
+    {
+        $event = $this->owned($eventId);
+        $this->authorize('update', $event);
+
+        $validated = validator([
+            'date' => $date,
+            'starts' => $starts,
+        ], [
+            'date' => ['required', 'date_format:Y-m-d'],
+            'starts' => ['required', 'date_format:H:i'],
+        ])->validate();
+
+        $move($event, $validated['date'], $validated['starts']);
+    }
+
+    public function resizeBlock(int $eventId, string $ends, ResizeEvent $resize): void
+    {
+        $event = $this->owned($eventId);
+        $this->authorize('update', $event);
+
+        $validated = validator([
+            'ends' => $ends,
+        ], [
+            'ends' => ['required', 'date_format:H:i'],
+        ])->validate();
+
+        $resize($event, $validated['ends']);
+    }
+
+    public function duplicate(DuplicateEvent $duplicate, ?int $eventId = null): void
+    {
+        $id = $eventId ?? $this->editingId;
+
+        if ($id === null) {
+            return;
+        }
+
+        $event = $this->owned($id);
+        $this->authorize('create', Event::class);
+        $copy = $duplicate($event);
+        $this->selectedDate = $copy->beginsAt()->timezone($this->timezone($this->user()))->toDateString();
+        $this->closeComposer();
+    }
+
     public function remove(DeleteEvent $delete): void
     {
         if ($this->editingId === null) {
@@ -218,7 +266,7 @@ class PlanningBoard extends Component
      *         selected: bool,
      *         today: bool,
      *         now: float|null,
-     *         blocks: list<array{id: int, title: string, time: string, meta: string, color: string, top: float, height: float}>
+     *         blocks: list<array{id: int, title: string, time: string, meta: string, color: string, top: float, height: float, duration: int}>
      *     }>
      * }
      */
@@ -273,6 +321,7 @@ class PlanningBoard extends Component
                     'color' => $this->color($event->category?->color),
                     'top' => $placed['top'],
                     'height' => $placed['height'],
+                    'duration' => (int) round(($event->finishesAt()->getTimestamp() - $event->beginsAt()->getTimestamp()) / 60),
                 ];
             }
 
@@ -296,7 +345,7 @@ class PlanningBoard extends Component
         return [
             'title' => $selected->isSameDay($today) ? (string) __('Today') : $selected->isoFormat('dddd'),
             'label' => $selected->isoFormat('D MMMM'),
-            'hint' => (string) __('Tap a time, or add a moment.'),
+            'hint' => (string) __('Tap a time to add. Drag a block to move it.'),
             'slots' => $this->slots(),
             'days' => $days,
         ];

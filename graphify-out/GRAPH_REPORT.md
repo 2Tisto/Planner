@@ -1,16 +1,16 @@
 # Graph Report - Planner  (2026-11-19)
 
 ## Corpus Check
-- 117 files · ~18,216 words
+- 121 files · ~18,963 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 416 nodes · 569 edges · 76 communities (64 shown, 12 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.8)
+- 433 nodes · 607 edges · 76 communities (64 shown, 12 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d91aa27e`
+- Built from commit: `8e151472`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -21,7 +21,7 @@
 - devDependencies
 - User
 - AppServiceProvider
-- CategoryManager
+- Category
 - VerifyEmailController.php
 - Illuminate\View\Component
 - README.md
@@ -46,9 +46,9 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `User` - 50 edges
-2. `Event` - 29 edges
-3. `Category` - 24 edges
-4. `PlanningBoard` - 21 edges
+2. `Event` - 36 edges
+3. `PlanningBoard` - 24 edges
+4. `Category` - 24 edges
 5. `CategoryManager` - 13 edges
 6. `require-dev` - 11 edges
 7. `Subject` - 9 edges
@@ -63,8 +63,10 @@
   app/Actions/Event/EventAttributes.php → app/Actions/Subject/FindOrCreateSubject.php
 - `UpdateEvent` --references--> `EventAttributes`  [EXTRACTED]
   app/Actions/Event/UpdateEvent.php → app/Actions/Event/EventAttributes.php
-- `VerifyEmailController` --inherits--> `Controller`  [EXTRACTED]
-  app/Http/Controllers/Auth/VerifyEmailController.php → app/Http/Controllers/Controller.php
+- `MoveEvent` --references--> `SnapTime`  [EXTRACTED]
+  app/Actions/Event/MoveEvent.php → app/Actions/Event/SnapTime.php
+- `ResizeEvent` --references--> `SnapTime`  [EXTRACTED]
+  app/Actions/Event/ResizeEvent.php → app/Actions/Event/SnapTime.php
 
 ## Import Cycles
 - None detected.
@@ -89,15 +91,15 @@ Nodes (26): autoprefixer, concurrently, @laravel/multiplex, laravel-vite-plugin,
 
 ### Community 4 - "User"
 Cohesion: 0.07
-Nodes (13): CreateCategory, SeedDefaultCategories, CreateEvent, EventAttributes, UpdateEvent, UpdateProfileInformation, FindOrCreateSubject, Category (+5 more)
+Nodes (14): SeedDefaultCategories, CreateEvent, EventAttributes, UpdateEvent, UpdateProfileInformation, FindOrCreateSubject, Subject, User (+6 more)
 
 ### Community 5 - "AppServiceProvider"
 Cohesion: 0.27
 Nodes (3): AppServiceProvider, VoltServiceProvider, Illuminate\Support\ServiceProvider
 
-### Community 6 - "CategoryManager"
+### Community 6 - "Category"
 Cohesion: 0.12
-Nodes (8): DeleteCategory, UpdateCategory, PlaceEventOnDay, CategoryManager, DateTimeInterface, Illuminate\Contracts\View\View, Illuminate\Database\Eloquent\Collection, Livewire\Component
+Nodes (8): CreateCategory, DeleteCategory, UpdateCategory, CategoryManager, Category, CategoryPolicy, Illuminate\Database\Eloquent\Collection, Livewire\Component
 
 ### Community 7 - "VerifyEmailController.php"
 Cohesion: 0.31
@@ -112,8 +114,8 @@ Cohesion: 0.25
 Nodes (7): About Laravel, Agentic Development, Code of Conduct, Contributing, Learning Laravel, License, Security Vulnerabilities
 
 ### Community 10 - "Event"
-Cohesion: 0.13
-Nodes (9): DeleteEvent, Event, Carbon, Subject, Illuminate\Database\Eloquent\Builder, Illuminate\Database\Eloquent\Factories\HasFactory, Illuminate\Database\Eloquent\Model, Illuminate\Database\Eloquent\Relations\BelongsTo (+1 more)
+Cohesion: 0.08
+Nodes (12): DeleteEvent, DuplicateEvent, MoveEvent, PlaceEventOnDay, ResizeEvent, SnapTime, Event, Carbon (+4 more)
 
 ### Community 14 - "Laravel Application"
 Cohesion: 0.50
@@ -133,7 +135,7 @@ Nodes (4): SetUserLocale, Closure, Illuminate\Http\Request, Symfony\Component\Ht
 
 ### Community 54 - "planning-board.blade.php"
 Cohesion: 0.20
-Nodes (9): closeComposer, goToToday, openCreate(, openEdit({{ $block[, openQuickAdd, remove, selectDate(, $set( (+1 more)
+Nodes (9): closeComposer, duplicate, goToToday, openCreate(, openQuickAdd, remove, selectDate(, $set( (+1 more)
 
 ## Knowledge Gaps
 - **95 isolated node(s):** `$schema`, `name`, `type`, `description`, `laravel` (+90 more)
@@ -143,11 +145,11 @@ Nodes (9): closeComposer, goToToday, openCreate(, openEdit({{ $block[, openQuick
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `User` connect `User` to `User.php`, `CategoryManager`, `VerifyEmailController.php`, `Event`, `PlanningBoard`?**
-  _High betweenness centrality (0.095) - this node is a cross-community bridge._
-- **Why does `Event` connect `Event` to `User`, `AppServiceProvider`, `CategoryManager`, `VerifyEmailController.php`, `LoginForm`, `PlanningBoard`?**
-  _High betweenness centrality (0.048) - this node is a cross-community bridge._
-- **Why does `Category` connect `User` to `Event`, `CategoryManager`?**
+- **Why does `User` connect `User` to `User.php`, `Category`, `VerifyEmailController.php`, `Event`, `PlanningBoard`?**
+  _High betweenness centrality (0.097) - this node is a cross-community bridge._
+- **Why does `Event` connect `Event` to `User`, `AppServiceProvider`, `VerifyEmailController.php`, `LoginForm`, `PlanningBoard`?**
+  _High betweenness centrality (0.061) - this node is a cross-community bridge._
+- **Why does `Category` connect `Category` to `User`?**
   _High betweenness centrality (0.022) - this node is a cross-community bridge._
 - **Are the 4 inferred relationships involving `User` (e.g. with `.definition()` and `.definition()`) actually correct?**
   _`User` has 4 INFERRED edges - model-reasoned connections that need verification._

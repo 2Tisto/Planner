@@ -54,11 +54,12 @@
 
             <div class="flex min-w-0 flex-1 gap-1 sm:gap-2">
                 @foreach ($board['days'] as $day)
-                    <div @class(['relative min-w-0 flex-1', 'hidden md:block' => ! $day['selected']]) wire:key="column-{{ $day['date'] }}">
+                    <div data-day="{{ $day['date'] }}" @class(['relative min-w-0 flex-1', 'hidden md:block' => ! $day['selected']]) wire:key="column-{{ $day['date'] }}">
                         @foreach ($board['slots'] as $slot)
                             <button
                                 type="button"
                                 wire:click="openCreate('{{ $day['date'] }}', '{{ $slot['time'] }}')"
+                                data-slot
                                 class="block h-12 w-full border-t border-slate-200/80 text-left hover:bg-white/80 dark:border-slate-700 dark:hover:bg-gray-800/80 {{ $slot['label'] === null ? 'border-slate-100 dark:border-slate-800' : '' }}"
                                 aria-label="{{ __('Add a moment') }} {{ $slot['time'] }}"
                             ></button>
@@ -71,19 +72,100 @@
                         @endif
 
                         @foreach ($day['blocks'] as $block)
-                            <button
-                                type="button"
-                                wire:click="openEdit({{ $block['id'] }})"
+                            <div
                                 wire:key="block-{{ $day['date'] }}-{{ $block['id'] }}"
-                                class="absolute inset-x-1 z-10 overflow-hidden rounded-2xl px-2 py-1.5 text-left text-slate-800 shadow-sm"
-                                style="top: {{ $block['top'] }}rem; height: {{ $block['height'] }}rem; background: {{ $block['color'] }}"
+                                role="button"
+                                tabindex="0"
+                                aria-label="{{ $block['title'] }} {{ $block['time'] }}"
+                                class="absolute inset-x-1 z-10 cursor-grab touch-none select-none overflow-hidden rounded-2xl px-2 py-1.5 text-left text-slate-800 shadow-sm active:cursor-grabbing"
+                                style="background: {{ $block['color'] }}"
+                                x-data="{
+                                    top: {{ $block['top'] }},
+                                    height: {{ $block['height'] }},
+                                    originTop: {{ $block['top'] }},
+                                    originHeight: {{ $block['height'] }},
+                                    dragging: false,
+                                    resizing: false,
+                                    moved: false,
+                                    startY: 0,
+                                    startX: 0,
+                                    pointerId: null,
+                                    stepPx() {
+                                        const slot = this.$el.parentElement?.querySelector('[data-slot]');
+                                        return slot ? slot.getBoundingClientRect().height / 2 : 24;
+                                    },
+                                    startMove(event) {
+                                        if (event.button !== undefined && event.button !== 0) return;
+                                        this.dragging = true;
+                                        this.moved = false;
+                                        this.startY = event.clientY;
+                                        this.startX = event.clientX;
+                                        this.pointerId = event.pointerId;
+                                        this.$el.setPointerCapture(event.pointerId);
+                                    },
+                                    startResize(event) {
+                                        this.resizing = true;
+                                        this.moved = false;
+                                        this.startY = event.clientY;
+                                        this.pointerId = event.pointerId;
+                                        this.$el.setPointerCapture(event.pointerId);
+                                    },
+                                    onPointerMove(event) {
+                                        if (! this.dragging && ! this.resizing) return;
+                                        const delta = Math.round((event.clientY - this.startY) / this.stepPx()) * 1.5;
+                                        if (Math.abs(event.clientY - this.startY) > 4 || Math.abs(event.clientX - this.startX) > 4) this.moved = true;
+                                        if (this.dragging) {
+                                            const limit = Math.max(0, 102 - this.originHeight);
+                                            this.top = Math.min(Math.max(0, this.originTop + delta), limit);
+                                            return;
+                                        }
+                                        this.height = Math.max(1.5, Math.min(this.originHeight + delta, 102 - this.top));
+                                    },
+                                    clock(total) {
+                                        const minutes = Math.max(0, Math.min(total, 24 * 60));
+                                        const hour = Math.floor(minutes / 60);
+                                        const minute = minutes % 60;
+                                        return String(hour).padStart(2, '0') + ':' + String(minute).padStart(2, '0');
+                                    },
+                                    async onPointerUp(event) {
+                                        if (! this.dragging && ! this.resizing) return;
+                                        const wasResize = this.resizing;
+                                        const didMove = this.moved;
+                                        this.dragging = false;
+                                        this.resizing = false;
+                                        if (! didMove) {
+                                            this.$wire.openEdit({{ $block['id'] }});
+                                            return;
+                                        }
+                                        const startMinutes = Math.round(this.top / 1.5) * 15 + 7 * 60;
+                                        if (wasResize) {
+                                            const length = Math.max(15, Math.round(this.height / 1.5) * 15);
+                                            await this.$wire.resizeBlock({{ $block['id'] }}, this.clock(startMinutes + length));
+                                            return;
+                                        }
+                                        const column = document.elementFromPoint(event.clientX, event.clientY)?.closest('[data-day]');
+                                        const date = column?.dataset.day ?? '{{ $day['date'] }}';
+                                        await this.$wire.moveBlock({{ $block['id'] }}, date, this.clock(startMinutes));
+                                    },
+                                }"
+                                x-bind:style="`top:${top}rem;height:${height}rem;background:{{ $block['color'] }}`"
+                                x-on:pointerdown="startMove($event)"
+                                x-on:pointermove="onPointerMove($event)"
+                                x-on:pointerup="onPointerUp($event)"
+                                x-on:pointercancel="onPointerUp($event)"
                             >
                                 <span class="block truncate text-sm font-medium leading-tight">{{ $block['title'] }}</span>
                                 <span class="block truncate text-xs text-slate-700/80">{{ $block['time'] }}</span>
                                 @if ($block['meta'] !== '')
                                     <span class="block truncate text-xs text-slate-700/70">{{ $block['meta'] }}</span>
                                 @endif
-                            </button>
+                                <span
+                                    data-resize
+                                    class="absolute inset-x-2 bottom-1 h-1.5 rounded-full bg-slate-800/20"
+                                    x-on:pointerdown.stop="startResize($event)"
+                                    aria-hidden="true"
+                                ></span>
+                            </div>
                         @endforeach
                     </div>
                 @endforeach
@@ -160,9 +242,14 @@
 
                 <div class="flex items-center justify-between gap-3 pt-2">
                     @if ($editingId)
-                        <button type="button" wire:click="remove" wire:confirm="{{ __('Remove this block?') }}" class="text-sm text-rose-700 hover:underline dark:text-rose-300">
-                            {{ __('Remove') }}
-                        </button>
+                        <div class="flex items-center gap-4">
+                            <button type="button" wire:click="duplicate" class="text-sm text-slate-600 hover:underline dark:text-slate-300">
+                                {{ __('Duplicate') }}
+                            </button>
+                            <button type="button" wire:click="remove" wire:confirm="{{ __('Remove this block?') }}" class="text-sm text-rose-700 hover:underline dark:text-rose-300">
+                                {{ __('Remove') }}
+                            </button>
+                        </div>
                     @else
                         <span></span>
                     @endif
