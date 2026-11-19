@@ -97,7 +97,7 @@ test('a block can be moved, resized and duplicated', function () {
     $this->actingAs($user);
 
     Livewire::test(PlanningBoard::class)
-        ->call('moveBlock', $event->id, '2026-11-19', '15:10')
+        ->call('moveBlock', $event->id, '2026-11-19', '2026-11-19', '15:10')
         ->assertHasNoErrors();
 
     $event->refresh();
@@ -106,7 +106,7 @@ test('a block can be moved, resized and duplicated', function () {
         ->and($event->ends_at->timezone('Africa/Porto-Novo')->format('H:i'))->toBe('17:15');
 
     Livewire::test(PlanningBoard::class)
-        ->call('resizeBlock', $event->id, '16:00')
+        ->call('resizeBlock', $event->id, '2026-11-19', '16:00')
         ->assertHasNoErrors();
 
     expect($event->refresh()->ends_at->timezone('Africa/Porto-Novo')->format('H:i'))->toBe('16:00');
@@ -131,7 +131,7 @@ test('another student cannot move a block', function () {
     $this->actingAs(User::factory()->create());
 
     Livewire::test(PlanningBoard::class)
-        ->call('moveBlock', $event->id, '2026-11-19', '10:00')
+        ->call('moveBlock', $event->id, '2026-11-19', '2026-11-19', '10:00')
         ->assertNotFound();
 
     expect($event->refresh()->title)->toBe('Secret');

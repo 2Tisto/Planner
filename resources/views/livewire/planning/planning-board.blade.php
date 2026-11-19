@@ -43,6 +43,21 @@
 
         <p class="mt-5 text-sm text-slate-500 dark:text-slate-400">{{ $board['hint'] }}</p>
 
+        @if ($pendingKind !== '')
+            <div class="mt-4 flex flex-wrap items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-sm dark:bg-gray-800">
+                <p class="text-sm text-slate-600 dark:text-slate-300">{{ __('This block repeats.') }}</p>
+                <button type="button" wire:click="applyPending('once')" class="rounded-full bg-slate-800 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700 dark:bg-slate-100 dark:text-slate-900">
+                    {{ __('Only this one') }}
+                </button>
+                <button type="button" wire:click="applyPending('series')" class="rounded-full px-4 py-2 text-sm text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-gray-700">
+                    {{ __('The whole series') }}
+                </button>
+                <button type="button" wire:click="cancelPending" class="text-sm text-slate-500 hover:text-slate-800 dark:hover:text-slate-200">
+                    {{ __('Leave it') }}
+                </button>
+            </div>
+        @endif
+
         <div class="mt-3 flex">
             <div class="w-12 shrink-0">
                 @foreach ($board['slots'] as $slot)
@@ -76,7 +91,7 @@
                                 wire:key="block-{{ $day['date'] }}-{{ $block['id'] }}"
                                 role="button"
                                 tabindex="0"
-                                aria-label="{{ $block['title'] }} {{ $block['time'] }}"
+                                aria-label="{{ $block['title'] }} {{ $block['time'] }}{{ $block['recurring'] ? ' '.__('Every week') : '' }}"
                                 class="absolute inset-x-1 z-10 cursor-grab touch-none select-none overflow-hidden rounded-2xl px-2 py-1.5 text-left text-slate-800 shadow-sm active:cursor-grabbing"
                                 style="background: {{ $block['color'] }}"
                                 x-data="{
@@ -134,18 +149,18 @@
                                         this.dragging = false;
                                         this.resizing = false;
                                         if (! didMove) {
-                                            this.$wire.openEdit({{ $block['id'] }});
+                                            this.$wire.openEdit({{ $block['id'] }}, '{{ $block['date'] }}');
                                             return;
                                         }
                                         const startMinutes = Math.round(this.top / 1.5) * 15 + 7 * 60;
                                         if (wasResize) {
                                             const length = Math.max(15, Math.round(this.height / 1.5) * 15);
-                                            await this.$wire.resizeBlock({{ $block['id'] }}, this.clock(startMinutes + length));
+                                            await this.$wire.resizeBlock({{ $block['id'] }}, '{{ $block['date'] }}', this.clock(startMinutes + length));
                                             return;
                                         }
                                         const column = document.elementFromPoint(event.clientX, event.clientY)?.closest('[data-day]');
                                         const date = column?.dataset.day ?? '{{ $day['date'] }}';
-                                        await this.$wire.moveBlock({{ $block['id'] }}, date, this.clock(startMinutes));
+                                        await this.$wire.moveBlock({{ $block['id'] }}, '{{ $block['date'] }}', date, this.clock(startMinutes));
                                     },
                                 }"
                                 x-bind:style="`top:${top}rem;height:${height}rem;background:{{ $block['color'] }}`"
@@ -239,6 +254,31 @@
                     <x-text-input wire:model="location" id="moment-room" type="text" class="mt-1 block w-full" placeholder="{{ __('Optional') }}" />
                     <x-input-error :messages="$errors->get('location')" class="mt-2" />
                 </div>
+
+                @if ($editingSeries)
+                    <div class="flex rounded-full bg-slate-100 p-1 text-sm dark:bg-gray-900">
+                        <button type="button" wire:click="$set('scope', 'once')" @class(['flex-1 rounded-full px-3 py-2', 'bg-white shadow-sm text-slate-800 dark:bg-gray-800 dark:text-slate-100' => $scope === 'once', 'text-slate-500' => $scope !== 'once'])>
+                            {{ __('This time') }}
+                        </button>
+                        <button type="button" wire:click="$set('scope', 'series')" @class(['flex-1 rounded-full px-3 py-2', 'bg-white shadow-sm text-slate-800 dark:bg-gray-800 dark:text-slate-100' => $scope === 'series', 'text-slate-500' => $scope !== 'series'])>
+                            {{ __('The whole series') }}
+                        </button>
+                    </div>
+                @else
+                    <label class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-200">
+                        <input wire:model.live="repeats" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800">
+                        <span>{{ __('Every week') }}</span>
+                    </label>
+                @endif
+
+                @if (($editingSeries && $scope === 'series') || (! $editingSeries && $repeats))
+                    <div>
+                        <x-input-label for="moment-until" :value="__('Until')" />
+                        <x-text-input wire:model="until" id="moment-until" type="date" class="mt-1 block w-full" required />
+                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">{{ __('Same day, every week.') }}</p>
+                        <x-input-error :messages="$errors->get('until')" class="mt-2" />
+                    </div>
+                @endif
 
                 <div class="flex items-center justify-between gap-3 pt-2">
                     @if ($editingId)

@@ -5,10 +5,16 @@ declare(strict_types=1);
 namespace App\Livewire\Planning;
 
 use App\Actions\Category\SeedDefaultCategories;
+use App\Actions\Event\CancelOccurrence;
+use App\Actions\Event\ChangeOccurrence;
+use App\Actions\Event\ChangeSeries;
 use App\Actions\Event\CreateEvent;
 use App\Actions\Event\DeleteEvent;
 use App\Actions\Event\DuplicateEvent;
+use App\Actions\Event\ExpandWeek;
 use App\Actions\Event\MoveEvent;
+use App\Actions\Event\OccurrenceMoment;
+use App\Actions\Event\OverrideOccurrence;
 use App\Actions\Event\PlaceEventOnDay;
 use App\Actions\Event\ResizeEvent;
 use App\Actions\Event\UpdateEvent;
@@ -43,6 +49,28 @@ class PlanningBoard extends Component
 
     public ?int $categoryId = null;
 
+    public bool $repeats = false;
+
+    public string $until = '';
+
+    public bool $editingSeries = false;
+
+    public string $scope = 'once';
+
+    public string $editingOccurrence = '';
+
+    public string $pendingKind = '';
+
+    public ?int $pendingEventId = null;
+
+    public string $pendingOccurrence = '';
+
+    public string $pendingDate = '';
+
+    public string $pendingStarts = '';
+
+    public string $pendingEnds = '';
+
     public function mount(SeedDefaultCategories $seed): void
     {
         $user = $this->user();
@@ -66,18 +94,21 @@ class PlanningBoard extends Component
 
         $this->selectedDate = $parsed->toDateString();
         $this->closeComposer();
+        $this->clearPending();
     }
 
     public function shiftDay(int $days): void
     {
         $this->selectedDate = Carbon::parse($this->selectedDate)->addDays($days)->toDateString();
         $this->closeComposer();
+        $this->clearPending();
     }
 
     public function goToToday(): void
     {
         $this->selectedDate = Carbon::now($this->timezone($this->user()))->toDateString();
         $this->closeComposer();
+        $this->clearPending();
     }
 
     public function openQuickAdd(): void
@@ -115,28 +146,70 @@ class PlanningBoard extends Component
         $this->location = '';
         $this->starts = $start->format('H:i');
         $this->ends = $start->copy()->addHour()->format('H:i');
+        $this->repeats = false;
+        $this->until = '';
+        $this->editingSeries = false;
+        $this->scope = 'once';
+        $this->editingOccurrence = '';
         $this->composerOpen = true;
+        $this->clearPending();
     }
 
-    public function openEdit(int $eventId): void
+    public function updatedRepeats(bool $repeats): void
+    {
+        if (! $repeats || $this->until !== '') {
+            return;
+        }
+
+        $this->until = Carbon::parse($this->selectedDate)->addWeeks(16)->toDateString();
+    }
+
+    public function openEdit(int $eventId, ?string $occurrence = null, ?OccurrenceMoment $moment = null): void
     {
         $event = $this->owned($eventId);
         $this->authorize('update', $event);
 
         $timezone = $this->timezone($this->user());
+        $date = $occurrence ?? $event->beginsAt()->timezone($timezone)->toDateString();
         $starts = $event->beginsAt()->timezone($timezone);
         $ends = $event->finishesAt()->timezone($timezone);
+        $title = $event->title;
+        $subject = $event->subjectLabel();
+        $location = $event->location ?? '';
+        $categoryId = $event->category_id;
+
+        if ($event->repeatsWeekly()) {
+            $event->loadMissing(['category', 'subject', 'exceptions.category', 'exceptions.subject']);
+            $resolved = ($moment ?? app(OccurrenceMoment::class))->__invoke($event, $date);
+
+            if ($resolved === null) {
+                abort(404);
+            }
+
+            $starts = $resolved['starts']->timezone($timezone);
+            $ends = $resolved['ends']->timezone($timezone);
+            $title = $resolved['title'];
+            $subject = $resolved['subject'];
+            $location = $resolved['location'];
+            $categoryId = $resolved['categoryId'];
+        }
 
         $this->resetErrorBag();
         $this->editingId = $event->id;
+        $this->editingOccurrence = $date;
+        $this->editingSeries = $event->repeatsWeekly();
+        $this->scope = 'once';
+        $this->repeats = $event->repeatsWeekly();
+        $this->until = $event->untilDate() ?? '';
         $this->selectedDate = $starts->toDateString();
-        $this->title = $event->title;
-        $this->subjectName = $event->subjectLabel();
-        $this->location = $event->location ?? '';
+        $this->title = $title;
+        $this->subjectName = $subject;
+        $this->location = $location;
         $this->starts = $starts->format('H:i');
         $this->ends = $ends->format('H:i');
-        $this->categoryId = $event->category_id;
+        $this->categoryId = $categoryId;
         $this->composerOpen = true;
+        $this->clearPending();
     }
 
     public function closeComposer(): void
@@ -145,12 +218,24 @@ class PlanningBoard extends Component
         $this->editingId = null;
     }
 
-    public function save(CreateEvent $create, UpdateEvent $update): void
+    public function save(CreateEvent $create, UpdateEvent $update, OverrideOccurrence $override): void
     {
         $user = $this->user();
         $this->title = trim($this->title);
         $this->subjectName = trim($this->subjectName);
         $this->location = trim($this->location);
+        $existing = null;
+
+        if ($this->editingId === null) {
+            $this->authorize('create', Event::class);
+        } else {
+            $existing = $this->owned($this->editingId);
+            $this->authorize('update', $existing);
+
+            if ($existing->repeatsWeekly()) {
+                $this->repeats = $this->scope === 'series';
+            }
+        }
 
         $validated = $this->validate([
             'title' => ['required', 'string', 'max:120'],
@@ -164,6 +249,12 @@ class PlanningBoard extends Component
             ],
             'subjectName' => ['nullable', 'string', 'max:120'],
             'location' => ['nullable', 'string', 'max:120'],
+            'until' => [
+                Rule::excludeIf(fn (): bool => ! $this->repeats),
+                'required',
+                'date_format:Y-m-d',
+                'after_or_equal:'.$this->firstDate($existing),
+            ],
         ]);
 
         $attributes = [
@@ -175,47 +266,104 @@ class PlanningBoard extends Component
             'subject_name' => $validated['subjectName'] ?? null,
             'location' => $validated['location'] ?? null,
         ];
+        $until = $this->repeats ? $validated['until'] : null;
 
-        if ($this->editingId === null) {
-            $this->authorize('create', Event::class);
-            $create($user, $attributes);
+        if ($existing instanceof Event && $existing->repeatsWeekly() && $this->scope !== 'series') {
+            $override($existing, $user, $this->editingOccurrence, $attributes);
+        } elseif ($existing instanceof Event) {
+            $update($existing, $user, $attributes, $this->repeats, $until);
         } else {
-            $event = $this->owned($this->editingId);
-            $this->authorize('update', $event);
-            $update($event, $user, $attributes);
+            $create($user, $attributes, $this->repeats, $until);
         }
 
         $this->closeComposer();
     }
 
-    public function moveBlock(int $eventId, string $date, string $starts, MoveEvent $move): void
+    public function moveBlock(int $eventId, string $occurrence, string $date, string $starts, MoveEvent $move): void
     {
         $event = $this->owned($eventId);
         $this->authorize('update', $event);
 
         $validated = validator([
+            'occurrence' => $occurrence,
             'date' => $date,
             'starts' => $starts,
         ], [
+            'occurrence' => ['required', 'date_format:Y-m-d'],
             'date' => ['required', 'date_format:Y-m-d'],
             'starts' => ['required', 'date_format:H:i'],
         ])->validate();
 
+        if ($event->repeatsWeekly()) {
+            $this->pendingKind = 'move';
+            $this->pendingEventId = $event->id;
+            $this->pendingOccurrence = $validated['occurrence'];
+            $this->pendingDate = $validated['date'];
+            $this->pendingStarts = $validated['starts'];
+            $this->pendingEnds = '';
+
+            return;
+        }
+
         $move($event, $validated['date'], $validated['starts']);
     }
 
-    public function resizeBlock(int $eventId, string $ends, ResizeEvent $resize): void
+    public function resizeBlock(int $eventId, string $occurrence, string $ends, ResizeEvent $resize): void
     {
         $event = $this->owned($eventId);
         $this->authorize('update', $event);
 
         $validated = validator([
+            'occurrence' => $occurrence,
             'ends' => $ends,
         ], [
+            'occurrence' => ['required', 'date_format:Y-m-d'],
             'ends' => ['required', 'date_format:H:i'],
         ])->validate();
 
+        if ($event->repeatsWeekly()) {
+            $this->pendingKind = 'resize';
+            $this->pendingEventId = $event->id;
+            $this->pendingOccurrence = $validated['occurrence'];
+            $this->pendingEnds = $validated['ends'];
+
+            return;
+        }
+
         $resize($event, $validated['ends']);
+    }
+
+    public function applyPending(string $scope, ChangeOccurrence $once, ChangeSeries $series): void
+    {
+        if ($this->pendingEventId === null || ($scope !== 'once' && $scope !== 'series')) {
+            return;
+        }
+
+        $event = $this->owned($this->pendingEventId);
+        $this->authorize('update', $event);
+
+        if ($this->pendingKind === 'move') {
+            if ($scope === 'once') {
+                $once->move($event, $this->pendingOccurrence, $this->pendingDate, $this->pendingStarts);
+            } else {
+                $series->move($event, $this->pendingOccurrence, $this->pendingDate, $this->pendingStarts);
+            }
+        }
+
+        if ($this->pendingKind === 'resize') {
+            if ($scope === 'once') {
+                $once->resize($event, $this->pendingOccurrence, $this->pendingEnds);
+            } else {
+                $series->resize($event, $this->pendingOccurrence, $this->pendingEnds);
+            }
+        }
+
+        $this->clearPending();
+    }
+
+    public function cancelPending(): void
+    {
+        $this->clearPending();
     }
 
     public function duplicate(DuplicateEvent $duplicate, ?int $eventId = null): void
@@ -228,12 +376,20 @@ class PlanningBoard extends Component
 
         $event = $this->owned($id);
         $this->authorize('create', Event::class);
-        $copy = $duplicate($event);
-        $this->selectedDate = $copy->beginsAt()->timezone($this->timezone($this->user()))->toDateString();
+        $timezone = $this->timezone($this->user());
+        $start = Carbon::parse($this->selectedDate.' '.$this->starts, $timezone);
+        $end = Carbon::parse($this->selectedDate.' '.$this->ends, $timezone);
+
+        if ($end->lessThanOrEqualTo($start)) {
+            $end = $end->addDay();
+        }
+
+        $copy = $duplicate($event, $start, $end);
+        $this->selectedDate = $copy->beginsAt()->timezone($timezone)->toDateString();
         $this->closeComposer();
     }
 
-    public function remove(DeleteEvent $delete): void
+    public function remove(DeleteEvent $delete, CancelOccurrence $cancel): void
     {
         if ($this->editingId === null) {
             return;
@@ -241,7 +397,13 @@ class PlanningBoard extends Component
 
         $event = $this->owned($this->editingId);
         $this->authorize('delete', $event);
-        $delete($event);
+
+        if ($event->repeatsWeekly() && $this->scope !== 'series') {
+            $cancel($event, $this->editingOccurrence);
+        } else {
+            $delete($event);
+        }
+
         $this->closeComposer();
     }
 
@@ -266,7 +428,7 @@ class PlanningBoard extends Component
      *         selected: bool,
      *         today: bool,
      *         now: float|null,
-     *         blocks: list<array{id: int, title: string, time: string, meta: string, color: string, top: float, height: float, duration: int}>
+     *         blocks: list<array{id: int, date: string, recurring: bool, title: string, time: string, meta: string, color: string, top: float, height: float, duration: int}>
      *     }>
      * }
      */
@@ -282,13 +444,7 @@ class PlanningBoard extends Component
         $weekStart = $selected->copy()->subDays($shift)->startOfDay();
         $place = app(PlaceEventOnDay::class);
 
-        $events = Event::query()
-            ->forUser($user)
-            ->with(['category', 'subject'])
-            ->where('starts_at', '<', $weekStart->copy()->addDays(7)->utc())
-            ->where('ends_at', '>', $weekStart->copy()->utc())
-            ->orderBy('starts_at')
-            ->get();
+        $occurrences = app(ExpandWeek::class)($user, $weekStart, $weekStart->copy()->addDays(7));
 
         $days = [];
 
@@ -298,30 +454,27 @@ class PlanningBoard extends Component
             $windowEnd = $day->copy()->startOfDay()->addHours(self::END_HOUR);
             $blocks = [];
 
-            foreach ($events as $event) {
-                $placed = $place($event->beginsAt(), $event->finishesAt(), $windowStart, $windowEnd);
+            foreach ($occurrences as $occurrence) {
+                $placed = $place($occurrence->starts, $occurrence->ends, $windowStart, $windowEnd);
 
                 if ($placed === null) {
                     continue;
                 }
 
-                $starts = $event->beginsAt()->timezone($timezone);
-                $ends = $event->finishesAt()->timezone($timezone);
-                $meta = $event->subjectLabel();
-
-                if ($meta === '') {
-                    $meta = (string) ($event->location ?? '');
-                }
+                $starts = $occurrence->starts->timezone($timezone);
+                $ends = $occurrence->ends->timezone($timezone);
 
                 $blocks[] = [
-                    'id' => $event->id,
-                    'title' => $event->title,
+                    'id' => $occurrence->id,
+                    'date' => $occurrence->date,
+                    'recurring' => $occurrence->recurring,
+                    'title' => $occurrence->title,
                     'time' => $this->clock($starts).' – '.$this->clock($ends),
-                    'meta' => $meta,
-                    'color' => $this->color($event->category?->color),
+                    'meta' => $occurrence->meta,
+                    'color' => $this->color($occurrence->color),
                     'top' => $placed['top'],
                     'height' => $placed['height'],
-                    'duration' => (int) round(($event->finishesAt()->getTimestamp() - $event->beginsAt()->getTimestamp()) / 60),
+                    'duration' => (int) round(($occurrence->ends->getTimestamp() - $occurrence->starts->getTimestamp()) / 60),
                 ];
             }
 
@@ -397,6 +550,27 @@ class PlanningBoard extends Component
         }
 
         return '#e5e7eb';
+    }
+
+    private function firstDate(?Event $event): string
+    {
+        if ($event instanceof Event && $event->repeatsWeekly()) {
+            $timezone = $event->timezone !== '' ? $event->timezone : (string) config('planner.default_timezone');
+
+            return $event->beginsAt()->timezone($timezone)->toDateString();
+        }
+
+        return $this->selectedDate;
+    }
+
+    private function clearPending(): void
+    {
+        $this->pendingKind = '';
+        $this->pendingEventId = null;
+        $this->pendingOccurrence = '';
+        $this->pendingDate = '';
+        $this->pendingStarts = '';
+        $this->pendingEnds = '';
     }
 
     private function owned(int $eventId): Event

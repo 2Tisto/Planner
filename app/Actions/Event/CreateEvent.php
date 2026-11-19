@@ -22,7 +22,7 @@ final class CreateEvent
      *     location: string|null
      * }  $attributes
      */
-    public function __invoke(User $user, array $attributes): Event
+    public function __invoke(User $user, array $attributes, bool $repeats = false, ?string $until = null): Event
     {
         $values = $this->attributes->__invoke($user, $attributes);
 
@@ -31,9 +31,9 @@ final class CreateEvent
             'user_id' => $user->id,
             'notes' => null,
             'is_all_day' => false,
-            'recurrence_frequency' => null,
+            'recurrence_frequency' => $repeats ? 'weekly' : null,
             'recurrence_interval' => 1,
-            'recurrence_until' => null,
+            'recurrence_until' => $repeats ? $until : null,
         ]);
     }
 }

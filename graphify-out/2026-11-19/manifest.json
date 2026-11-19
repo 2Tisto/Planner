@@ -435,8 +435,8 @@
     "semantic_hash": ""
   },
   "lang/fr.json": {
-    "mtime": 1795045888.1366706,
-    "ast_hash": "e910e12af57790e69d6e1e6f5dfd7aa3",
+    "mtime": 1795073978.125997,
+    "ast_hash": "ff358a18c141259f2a19f479644690dc",
     "semantic_hash": ""
   },
   "app/Actions/Category/CreateCategory.php": {
@@ -495,8 +495,8 @@
     "semantic_hash": ""
   },
   "app/Livewire/Planning/PlanningBoard.php": {
-    "mtime": 1795045595.175796,
-    "ast_hash": "0732efe5a4dad1da22cf820251691e45",
+    "mtime": 1795074085.1212673,
+    "ast_hash": "ffed41f724a433f80b68d710a6c8e0fb",
     "semantic_hash": ""
   },
   "app/Models/Category.php": {
@@ -565,8 +565,8 @@
     "semantic_hash": ""
   },
   "resources/views/livewire/planning/planning-board.blade.php": {
-    "mtime": 1795045101.0105722,
-    "ast_hash": "545fed6362d68a3095b8083f291367a1",
+    "mtime": 1795074277.840887,
+    "ast_hash": "0239bdf3ff17f81aef2f2530b00651a0",
     "semantic_hash": ""
   },
   "resources/views/planning.blade.php": {
@@ -580,13 +580,33 @@
     "semantic_hash": ""
   },
   "tests/Feature/PlanningTest.php": {
-    "mtime": 1795045045.3975246,
-    "ast_hash": "7afa7dcedb4b7c79c1fbe13f77ef54f8",
+    "mtime": 1795074031.8814557,
+    "ast_hash": "d4bb77eee40ea6f73b0e5bd4592e1acb",
     "semantic_hash": ""
   },
   "tests/Unit/Event/PlaceEventOnDayTest.php": {
     "mtime": 1795045039.5754254,
     "ast_hash": "f53bff31e7d67c7e035b6786be0aee43",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/DuplicateEvent.php": {
+    "mtime": 1795074129.2272518,
+    "ast_hash": "4e528b3debf035a20bce5455aceb29e7",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/MoveEvent.php": {
+    "mtime": 1795073943.573132,
+    "ast_hash": "5f493f4b190e760417470624bb046be0",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/ResizeEvent.php": {
+    "mtime": 1795073954.0391736,
+    "ast_hash": "7a6f43a13b35b6b8366b48a7257d1bf5",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/SnapTime.php": {
+    "mtime": 1795073938.8475685,
+    "ast_hash": "b5d026feb91134d272272d19942e835b",
     "semantic_hash": ""
   }
 }

@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
 #[Fillable([
@@ -68,6 +69,30 @@ class Event extends Model
     public function subject(): BelongsTo
     {
         return $this->belongsTo(Subject::class);
+    }
+
+    /**
+     * @return HasMany<EventException, $this>
+     */
+    public function exceptions(): HasMany
+    {
+        return $this->hasMany(EventException::class);
+    }
+
+    public function repeatsWeekly(): bool
+    {
+        return $this->recurrence_frequency === 'weekly' && $this->untilDate() !== null;
+    }
+
+    public function untilDate(): ?string
+    {
+        $until = $this->getAttribute('recurrence_until');
+
+        if ($until === null || $until === '') {
+            return null;
+        }
+
+        return $this->moment($until)->toDateString();
     }
 
     /**

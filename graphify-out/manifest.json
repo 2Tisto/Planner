@@ -435,8 +435,8 @@
     "semantic_hash": ""
   },
   "lang/fr.json": {
-    "mtime": 1795073978.125997,
-    "ast_hash": "ff358a18c141259f2a19f479644690dc",
+    "mtime": 1795075673.0120363,
+    "ast_hash": "307c7f4b75049b607dde9da0766e245c",
     "semantic_hash": ""
   },
   "app/Actions/Category/CreateCategory.php": {
@@ -460,8 +460,8 @@
     "semantic_hash": ""
   },
   "app/Actions/Event/CreateEvent.php": {
-    "mtime": 1795044964.0262403,
-    "ast_hash": "b56ffdf8b002de3f4daa52f0bb2e2a35",
+    "mtime": 1795075510.7493362,
+    "ast_hash": "afcbbf334e0b97cd11ee590df472de83",
     "semantic_hash": ""
   },
   "app/Actions/Event/DeleteEvent.php": {
@@ -480,8 +480,8 @@
     "semantic_hash": ""
   },
   "app/Actions/Event/UpdateEvent.php": {
-    "mtime": 1795044966.0315535,
-    "ast_hash": "ac4e063b4d960e83a4fd2d96203bdfe5",
+    "mtime": 1795075514.7632143,
+    "ast_hash": "96edb3104808e5b1f463bcef579706bd",
     "semantic_hash": ""
   },
   "app/Actions/Subject/FindOrCreateSubject.php": {
@@ -495,8 +495,8 @@
     "semantic_hash": ""
   },
   "app/Livewire/Planning/PlanningBoard.php": {
-    "mtime": 1795074085.1212673,
-    "ast_hash": "ffed41f724a433f80b68d710a6c8e0fb",
+    "mtime": 1795075843.8890898,
+    "ast_hash": "8a27a8bd427d57faacaa514ef884814c",
     "semantic_hash": ""
   },
   "app/Models/Category.php": {
@@ -505,8 +505,8 @@
     "semantic_hash": ""
   },
   "app/Models/Event.php": {
-    "mtime": 1795045587.2869463,
-    "ast_hash": "5ff9cb589a8f9db0d8a70c32493056bc",
+    "mtime": 1795075842.852895,
+    "ast_hash": "b7f29f77933a4336e7dc4095d898f004",
     "semantic_hash": ""
   },
   "app/Models/Subject.php": {
@@ -565,8 +565,8 @@
     "semantic_hash": ""
   },
   "resources/views/livewire/planning/planning-board.blade.php": {
-    "mtime": 1795074277.840887,
-    "ast_hash": "0239bdf3ff17f81aef2f2530b00651a0",
+    "mtime": 1795075974.514708,
+    "ast_hash": "575a9239e83810fff05b07b98874a6ce",
     "semantic_hash": ""
   },
   "resources/views/planning.blade.php": {
@@ -580,8 +580,8 @@
     "semantic_hash": ""
   },
   "tests/Feature/PlanningTest.php": {
-    "mtime": 1795074031.8814557,
-    "ast_hash": "d4bb77eee40ea6f73b0e5bd4592e1acb",
+    "mtime": 1795075621.9228122,
+    "ast_hash": "6e204db2973faa5c256d574d808682e9",
     "semantic_hash": ""
   },
   "tests/Unit/Event/PlaceEventOnDayTest.php": {
@@ -590,8 +590,8 @@
     "semantic_hash": ""
   },
   "app/Actions/Event/DuplicateEvent.php": {
-    "mtime": 1795074129.2272518,
-    "ast_hash": "4e528b3debf035a20bce5455aceb29e7",
+    "mtime": 1795075514.9487326,
+    "ast_hash": "7366283ea609b7b7cb44fc80779a827d",
     "semantic_hash": ""
   },
   "app/Actions/Event/MoveEvent.php": {
@@ -607,6 +607,56 @@
   "app/Actions/Event/SnapTime.php": {
     "mtime": 1795073938.8475685,
     "ast_hash": "b5d026feb91134d272272d19942e835b",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/CancelOccurrence.php": {
+    "mtime": 1795075461.3022218,
+    "ast_hash": "cf0fb17d655fd369b24c09267de0dfd0",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/ChangeOccurrence.php": {
+    "mtime": 1795075470.6003513,
+    "ast_hash": "5ecf76b885e4c4a8201b08415ca1db6c",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/ChangeSeries.php": {
+    "mtime": 1795075507.5553317,
+    "ast_hash": "15004b8b1b00ed3af69ecebac5fc181e",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/ExpandWeek.php": {
+    "mtime": 1795075845.6103284,
+    "ast_hash": "4c677abbb0e0390e279550413f77b626",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/Occurrence.php": {
+    "mtime": 1795075436.6009104,
+    "ast_hash": "15af2822038096cf9022eb5e9bd80d92",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/OccurrenceMoment.php": {
+    "mtime": 1795075843.2190883,
+    "ast_hash": "6e3664f2eaedfb7e6a5d9a8b38a25d2a",
+    "semantic_hash": ""
+  },
+  "app/Actions/Event/OverrideOccurrence.php": {
+    "mtime": 1795075457.9708452,
+    "ast_hash": "8b318007f4b5b46edf3224ac256f52e8",
+    "semantic_hash": ""
+  },
+  "app/Models/EventException.php": {
+    "mtime": 1795075434.1365352,
+    "ast_hash": "0e4f64769814cc3570d7e4c245889dec",
+    "semantic_hash": ""
+  },
+  "database/migrations/2026_11_19_005000_create_event_exceptions_table.php": {
+    "mtime": 1795075433.084372,
+    "ast_hash": "7d0664038948e27cd031556fc972f024",
+    "semantic_hash": ""
+  },
+  "tests/Feature/RecurrenceTest.php": {
+    "mtime": 1795075700.667491,
+    "ast_hash": "b0cf170589c0d3569694bb771e8403d2",
     "semantic_hash": ""
   }
 }
