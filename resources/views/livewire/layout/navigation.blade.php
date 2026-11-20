@@ -30,11 +30,17 @@ new class extends Component
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard', 'planning.board')" wire:navigate>
-                        {{ __('My day') }}
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                        {{ __('Today') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')" wire:navigate>
-                        {{ __('Categories') }}
+                    <x-nav-link :href="route('planning.board')" :active="request()->routeIs('planning.board')" wire:navigate>
+                        {{ __('Planning') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('tasks.index')" :active="request()->routeIs('tasks.index')" wire:navigate>
+                        {{ __('Tasks') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('deadlines.index')" :active="request()->routeIs('deadlines.index')" wire:navigate>
+                        {{ __('Deadlines') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -55,6 +61,21 @@ new class extends Component
                     </x-slot>
 
                     <x-slot name="content">
+                        <x-dropdown-link :href="route('subjects.index')" wire:navigate>
+                            {{ __('Subjects') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('habits.index')" wire:navigate>
+                            {{ __('Habits') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('revisions.index')" wire:navigate>
+                            {{ __('Revisions') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('reviews.index')" wire:navigate>
+                            {{ __('Weekly review') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('categories.index')" wire:navigate>
+                            {{ __('Categories') }}
+                        </x-dropdown-link>
                         <x-dropdown-link :href="route('profile')" wire:navigate>
                             {{ __('Profile') }}
                         </x-dropdown-link>
@@ -84,8 +105,29 @@ new class extends Component
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard', 'planning.board')" wire:navigate>
-                {{ __('My day') }}
+            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                {{ __('Today') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('planning.board')" :active="request()->routeIs('planning.board')" wire:navigate>
+                {{ __('Planning') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('tasks.index')" :active="request()->routeIs('tasks.index')" wire:navigate>
+                {{ __('Tasks') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('deadlines.index')" :active="request()->routeIs('deadlines.index')" wire:navigate>
+                {{ __('Deadlines') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('subjects.index')" :active="request()->routeIs('subjects.index')" wire:navigate>
+                {{ __('Subjects') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('habits.index')" :active="request()->routeIs('habits.index')" wire:navigate>
+                {{ __('Habits') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('revisions.index')" :active="request()->routeIs('revisions.index')" wire:navigate>
+                {{ __('Revisions') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('reviews.index')" :active="request()->routeIs('reviews.index')" wire:navigate>
+                {{ __('Weekly review') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')" wire:navigate>
                 {{ __('Categories') }}

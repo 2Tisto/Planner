@@ -38,7 +38,7 @@ test('a weekly block is listed once for each week of the month', function () {
         'week_starts_on' => 1,
     ]);
     Event::factory()->for($user)->create([
-        'title' => 'TP',
+        'title' => 'Atelier',
         'timezone' => 'Africa/Porto-Novo',
         'starts_at' => Carbon::parse('2026-11-05 14:00', 'Africa/Porto-Novo')->utc(),
         'ends_at' => Carbon::parse('2026-11-05 16:00', 'Africa/Porto-Novo')->utc(),
@@ -53,7 +53,7 @@ test('a weekly block is listed once for each week of the month', function () {
         ->call('showMonth')
         ->html();
 
-    expect(substr_count($html, 'TP'))->toBe(4);
+    expect(substr_count($html, 'Atelier'))->toBe(4);
 });
 
 test('the month arrows move a whole month', function () {
