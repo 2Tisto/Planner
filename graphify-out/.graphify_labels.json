@@ -4,9 +4,9 @@
   "2": "PlanningBoard.php",
   "3": "devDependencies",
   "4": "EventAttributes",
-  "5": "DatabaseSeeder.php",
-  "6": "User",
-  "7": "EventException",
+  "5": "User",
+  "6": "CategoryManager",
+  "7": "Illuminate\\Database\\Eloquent\\Relations\\BelongsTo",
   "8": "Illuminate\\View\\Component",
   "9": "README.md",
   "10": "Event",
@@ -23,7 +23,7 @@
   "21": "verify-email.blade.php",
   "22": "artisan",
   "23": "php",
-  "24": "layout.navigation",
+  "24": "app.blade.php",
   "25": "layout/navigation.blade.php",
   "26": "welcome.blade.php",
   "27": "SetUserLocale.php",
@@ -78,5 +78,9 @@
   "76": "AppServiceProvider.php",
   "77": "2026_11_19_005000_create_event_exceptions_table.php",
   "78": "VerifyEmailController.php",
-  "79": "LoginForm"
+  "79": "Subject",
+  "80": "Category",
+  "81": "Category.php",
+  "82": "sw.js",
+  "83": "pwa.blade.php"
 }

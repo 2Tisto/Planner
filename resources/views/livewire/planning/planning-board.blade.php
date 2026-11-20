@@ -11,9 +11,43 @@
             </button>
         </div>
 
-        <form wire:submit="draft" class="mt-4 flex gap-2">
-            <input wire:model="phrase" type="text" placeholder="{{ __('For example: TP réseaux mardi 14h-17h.') }}" aria-label="{{ __('Add a moment') }}" class="min-w-0 flex-1 rounded-full bg-white px-4 py-2 text-sm text-slate-800 shadow-sm dark:bg-gray-800 dark:text-slate-100" />
-            <button type="submit" class="shrink-0 rounded-full bg-white px-4 py-2 text-sm text-slate-600 shadow-sm hover:text-slate-800 dark:bg-gray-800 dark:text-slate-300">
+        <section class="mt-6" aria-label="{{ __('Right now') }}">
+            @if ($focus['current'] !== null)
+                <button
+                    type="button"
+                    wire:click="openEdit({{ $focus['current']['id'] }}, '{{ $focus['current']['date'] }}')"
+                    class="block w-full rounded-[2rem] px-5 py-6 text-left shadow-sm"
+                    style="background: {{ $focus['current']['color'] }}"
+                >
+                    <span class="text-sm text-slate-700/80">{{ __('Right now') }}</span>
+                    <span class="mt-1 block text-2xl font-semibold tracking-tight text-slate-800">{{ $focus['current']['title'] }}</span>
+                    <span class="mt-2 block text-sm text-slate-700">{{ $focus['current']['time'] }}@if ($focus['current']['meta'] !== '') · {{ $focus['current']['meta'] }}@endif</span>
+                </button>
+            @else
+                <div class="rounded-[2rem] bg-white px-5 py-6 shadow-sm dark:bg-gray-800">
+                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('Right now') }}</p>
+                    <p class="mt-1 text-2xl font-semibold tracking-tight text-slate-800 dark:text-slate-100">{{ __($focus['quiet'] === 'clear' ? 'Nothing left today.' : ($focus['quiet'] === 'waiting' ? 'Nothing right now.' : 'The day is open.')) }}</p>
+                </div>
+            @endif
+
+            @if ($focus['next'] !== null)
+                <button
+                    type="button"
+                    wire:click="openEdit({{ $focus['next']['id'] }}, '{{ $focus['next']['date'] }}')"
+                    class="mt-3 flex w-full items-center justify-between gap-3 rounded-[2rem] bg-white px-5 py-4 text-left shadow-sm dark:bg-gray-800"
+                >
+                    <span>
+                        <span class="block text-xs text-slate-400">{{ __('Next up') }}</span>
+                        <span class="mt-1 block text-lg font-semibold text-slate-800 dark:text-slate-100">{{ $focus['next']['title'] }}</span>
+                    </span>
+                    <span class="shrink-0 text-sm text-slate-500 dark:text-slate-400">{{ $focus['next']['time'] }}</span>
+                </button>
+            @endif
+        </section>
+
+        <form wire:submit="draft" class="mt-4 flex flex-col gap-2 sm:flex-row">
+            <input wire:model="phrase" type="text" placeholder="{{ __('For example: TP réseaux mardi 14h-17h.') }}" aria-label="{{ __('Add a moment') }}" class="min-w-0 w-full flex-1 rounded-full bg-white px-4 py-2 text-sm text-slate-800 shadow-sm dark:bg-gray-800 dark:text-slate-100" />
+            <button type="submit" class="w-full shrink-0 rounded-full bg-white px-4 py-2 text-sm text-slate-600 shadow-sm hover:text-slate-800 dark:bg-gray-800 dark:text-slate-300 sm:w-auto">
                 {{ __('Prepare') }}
             </button>
         </form>

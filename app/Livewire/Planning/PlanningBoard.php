@@ -14,6 +14,7 @@ use App\Actions\Event\DuplicateEvent;
 use App\Actions\Event\ExpandWeek;
 use App\Actions\Event\FindOverlaps;
 use App\Actions\Event\MoveEvent;
+use App\Actions\Event\Occurrence;
 use App\Actions\Event\OccurrenceMoment;
 use App\Actions\Event\OverrideOccurrence;
 use App\Actions\Event\PlaceEventOnDay;
@@ -469,6 +470,7 @@ class PlanningBoard extends Component
     {
         return view('livewire.planning.planning-board', [
             'board' => $this->span === 'month' ? $this->month() : $this->board(),
+            'focus' => $this->focus(),
             'categories' => $this->user()->categories()->orderBy('position')->orderBy('id')->get(),
             'overlaps' => $this->composerOpen ? $this->overlaps() : [],
         ]);
@@ -560,6 +562,70 @@ class PlanningBoard extends Component
             'hint' => (string) __('Tap a time to add. Drag a block to move it.'),
             'slots' => $this->slots(),
             'days' => $days,
+        ];
+    }
+
+    /**
+     * @return array{
+     *     current: array{id: int, date: string, title: string, time: string, meta: string, color: string}|null,
+     *     next: array{id: int, date: string, title: string, time: string, meta: string, color: string}|null,
+     *     quiet: 'open'|'waiting'|'clear'|null
+     * }
+     */
+    private function focus(): array
+    {
+        $user = $this->user();
+        $timezone = $this->timezone($user);
+        $now = Carbon::now($timezone);
+        $day = $now->copy()->startOfDay();
+        $occurrences = app(ExpandWeek::class)($user, $day, $day->copy()->addDay());
+        $ongoing = [];
+        $upcoming = [];
+        $finished = false;
+
+        foreach ($occurrences as $occurrence) {
+            if ($occurrence->starts->lessThanOrEqualTo($now) && $occurrence->ends->greaterThan($now)) {
+                $ongoing[] = $occurrence;
+            } elseif ($occurrence->starts->greaterThan($now)) {
+                $upcoming[] = $occurrence;
+            } elseif ($occurrence->ends->lessThanOrEqualTo($now)) {
+                $finished = true;
+            }
+        }
+
+        usort($ongoing, fn (Occurrence $left, Occurrence $right): int => $right->starts->getTimestamp() <=> $left->starts->getTimestamp());
+        usort($upcoming, fn (Occurrence $left, Occurrence $right): int => $left->starts->getTimestamp() <=> $right->starts->getTimestamp());
+
+        $current = $ongoing[0] ?? null;
+        $next = $upcoming[0] ?? null;
+        $quiet = null;
+
+        if (! $current instanceof Occurrence) {
+            $quiet = $next instanceof Occurrence ? 'waiting' : ($finished ? 'clear' : 'open');
+        }
+
+        return [
+            'current' => $current instanceof Occurrence ? $this->presentFocus($current, $timezone) : null,
+            'next' => $next instanceof Occurrence ? $this->presentFocus($next, $timezone) : null,
+            'quiet' => $quiet,
+        ];
+    }
+
+    /**
+     * @return array{id: int, date: string, title: string, time: string, meta: string, color: string}
+     */
+    private function presentFocus(Occurrence $occurrence, string $timezone): array
+    {
+        $starts = $occurrence->starts->copy()->timezone($timezone);
+        $ends = $occurrence->ends->copy()->timezone($timezone);
+
+        return [
+            'id' => $occurrence->id,
+            'date' => $occurrence->date,
+            'title' => $occurrence->title,
+            'time' => $this->clock($starts).' – '.$this->clock($ends),
+            'meta' => $occurrence->meta,
+            'color' => $this->color($occurrence->color),
         ];
     }
 

@@ -240,13 +240,13 @@
     "semantic_hash": ""
   },
   "resources/views/layouts/app.blade.php": {
-    "mtime": 1794917826.3591468,
-    "ast_hash": "f30034d8acb1e7a87a71d45912a5d763",
+    "mtime": 1795179916.0439386,
+    "ast_hash": "cadc39a8c0d94e4da0b763a52002569c",
     "semantic_hash": ""
   },
   "resources/views/layouts/guest.blade.php": {
-    "mtime": 1794917826.3594086,
-    "ast_hash": "005f0d1c948354316043c34dccf7c160",
+    "mtime": 1795179916.0634878,
+    "ast_hash": "7e6d4a72e4e1442900dade6d48516a91",
     "semantic_hash": ""
   },
   "resources/views/livewire/layout/navigation.blade.php": {
@@ -435,8 +435,8 @@
     "semantic_hash": ""
   },
   "lang/fr.json": {
-    "mtime": 1795078737.7382371,
-    "ast_hash": "94eb360863986952c078ead7bc6ed02c",
+    "mtime": 1795180652.4280643,
+    "ast_hash": "8c55f7c62d1bb014f74d5b5a82edbef1",
     "semantic_hash": ""
   },
   "app/Actions/Category/CreateCategory.php": {
@@ -495,8 +495,8 @@
     "semantic_hash": ""
   },
   "app/Livewire/Planning/PlanningBoard.php": {
-    "mtime": 1795078732.588963,
-    "ast_hash": "e88789fc3cdbe0a3cac8e682ab63784d",
+    "mtime": 1795180648.9100957,
+    "ast_hash": "1380628eb8483b2dd4229c82b24004cb",
     "semantic_hash": ""
   },
   "app/Models/Category.php": {
@@ -565,8 +565,8 @@
     "semantic_hash": ""
   },
   "resources/views/livewire/planning/planning-board.blade.php": {
-    "mtime": 1795078732.2899897,
-    "ast_hash": "87ad1bfe306085d66bae51ef673828e3",
+    "mtime": 1795180652.4345498,
+    "ast_hash": "e8de1c27157cf27acc777a4a453e4b0a",
     "semantic_hash": ""
   },
   "resources/views/planning.blade.php": {
@@ -692,6 +692,31 @@
   "tests/Unit/Event/ReadPhraseTest.php": {
     "mtime": 1795078737.8085,
     "ast_hash": "4cac327f2fc8b40ccb1449d6aecdaa30",
+    "semantic_hash": ""
+  },
+  "public/sw.js": {
+    "mtime": 1795179907.2379732,
+    "ast_hash": "dfd238cfffb23f43cfbc78167bac21f5",
+    "semantic_hash": ""
+  },
+  "resources/views/layouts/pwa.blade.php": {
+    "mtime": 1795179907.238973,
+    "ast_hash": "465d551c9ff629339086bd8570ee2c76",
+    "semantic_hash": ""
+  },
+  "tests/Feature/NowTest.php": {
+    "mtime": 1795180652.948203,
+    "ast_hash": "0f4019c5cdec6c527781dab8aecc85f9",
+    "semantic_hash": ""
+  },
+  "public/icons/icon-192.png": {
+    "mtime": 1795180104.687156,
+    "ast_hash": "d7b8100a93c875084c3a0602991826d8",
+    "semantic_hash": ""
+  },
+  "public/icons/icon-512.png": {
+    "mtime": 1795180105.1797786,
+    "ast_hash": "f1eab21512be0bd2b3c45939ad2a8380",
     "semantic_hash": ""
   }
 }
